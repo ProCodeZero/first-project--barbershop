@@ -1,6 +1,12 @@
 @import "_header";
+@import "_footer";
 
-body{
-	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-	font-weight: normal;
+* {
+  font-family: "PT Sans Narrow", sans-serif;
+}
+
+.header {
+	font-weight: 700;
+	line-height: 140%;
+	text-transform: uppercase;
 }
