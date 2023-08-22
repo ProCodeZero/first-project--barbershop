@@ -1,13 +1,173 @@
-.header {
-  color: aqua;
-}
+@import url(zero_style.css);
 
 * {
   font-family: "PT Sans Narrow", sans-serif;
+	color: white;
+	background-color: black;
 }
 
 .header {
-  font-weight: 700;
+  display: flex;
+  justify-content: space-around;
+}
+.der__group-1 {
+	display: grid;
+}
+.header__btn {
+	font-weight: 700;
   line-height: 140%;
   text-transform: uppercase;
+	font-size: 16px;
+}
+.header__group-2 {
+	display: grid;
+	
+}
+.btn-find{
+background-image: url('/pictures/icons/search.svg');
+width: 16px;
+height: 16px;
+}
+.btn-basket{
+	background-image: url('/pictures/icons/cart.svg');
+	width: 16px;
+	height: 16px;
+}
+.main {
+}
+.main__greeting {
+}
+.greeting {
+}
+.greeting__logo {
+}
+.logo-img {
+}
+.greeting__text-block-1 {
+}
+.block-1 {
+}
+.block-1__title {
+}
+.block-1__img {
+}
+.block-1__paragraph {
+}
+.greeting__text-block-2 {
+}
+.block-2 {
+}
+.greeting__text-block-3 {
+}
+.block-3 {
+}
+.main__servises {
+}
+.servises {
+}
+.servises__popular-servises {
+}
+.popular-servises {
+}
+.popular-servises__title {
+}
+.main-block-title {
+}
+.popular-servises__list {
+}
+.popular-servises__check-all-btn {
+}
+.servises__galery {
+}
+.galery {
+}
+.galery__title {
+}
+.galery__img {
+}
+.galery-img {
+}
+.main__information {
+}
+.information {
+}
+.information__contacts {
+}
+.contacts {
+}
+.contacts__title {
+}
+.contacts__subtitle {
+}
+.main-block-subtitle {
+}
+.contacts__info {
+}
+.contacts__phone-number {
+}
+.contacts__time-of-working {
+}
+.contacts__route {
+}
+.contacts__feedback {
+}
+.information__appointment {
+}
+.appointment {
+}
+.appointment__title {
+}
+.appointment__paragraph {
+}
+.appointment__form {
+}
+.full-form {
+}
+.full-form__date {
+}
+.full-form__time {
+}
+.full-form__phone {
+}
+.full-form__name {
+}
+.full-form__subscribe {
+}
+.footer {
+}
+.footer__info {
+}
+.footer-left {
+}
+.footer-left__short-logo {
+}
+.footer-left__paragraph {
+}
+.footer-left__phone {
+}
+.footer-left__link {
+}
+.footer__offers {
+}
+.footer-middle {
+}
+.footer-middle__title {
+}
+.footer-title {
+}
+.footer-middle__email-form {
+}
+.footer__social-media {
+}
+.footer-right {
+}
+.footer-right__title {
+}
+.footer-right__btn {
+}
+.btn-sotial-media {
+}
+.footer-right__signature {
+}
+.creator {
 }
