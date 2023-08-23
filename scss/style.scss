@@ -120,13 +120,20 @@
     }
 
     .servises__gallery {
+			display: inline;
+			margin: 40px;
       .swiper-container {
+				width: 400px;
+				overflow: hidden;
+				position: relative;
       }
       .swiper-wrapper {
       }
       .swiper-slide {
       }
       .gallery__img {
+				max-width: 390px;
+				margin-bottom: 36px;
       }
       .swiper-button-prev {
       }
