@@ -11,18 +11,22 @@
   background: rgb(0, 0, 0);
   background: linear-gradient(
     0deg,
-    rgba(0, 0, 0, 1) 78%,
+    rgba(0, 0, 0, 1) 48%,
     rgba(48, 48, 48, 0.8) 100%
   );
   .main__background {
-    width: 100%;
     position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 180%; /* Need a specific value to work */
     filter: grayscale(100%);
     z-index: -1;
   }
 
   // * Приветствие
   .main__greeting {
+    width: 1024px;
     text-align: center;
     .greeting__logo {
       grid-area: logo;
@@ -60,26 +64,78 @@
     }
   }
 
-  // *Блок_1
+  // * Блок_1
+  .main-block-title {
+    color: var(--basic-extra-dark, #242424);
+    font-family: PT Sans Narrow;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 110%; /* 35.2px */
+    text-transform: uppercase;
+    padding-bottom: 28px;
+  }
   .main__servises {
-    .main-block-title {
+    margin-left: auto;
+    margin-right: auto;
+    width: 940px;
+    height: 409px;
+    margin-top: 58px;
+    background-color: #fff;
+    color: black;
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    overflow: hidden;
+    // * Услуги
+    .servises__popular-servises {
+      margin: 40px;
+      .popular-servises__list li {
+        color: black;
+        color: var(--basic-extra-dark, #242424);
+        font-family: PT Sans Narrow;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 140%; /* 28px */
+        text-transform: uppercase;
+        padding-bottom: 22px;
+      }
+      .popular-servises__check-all-btn {
+        display: flex;
+        height: 44px;
+        padding: 14px 20px;
+        align-items: start;
+        gap: 8px;
+        flex-shrink: 0;
+        background: var(--basic-black, #000);
+        color: #fff;
+        text-align: center;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 100%; /* 16px */
+        text-transform: uppercase;
+        margin-top: 10px;
+      }
     }
-    .popular-servises__list li {
-    }
-    .popular-servises__check-all-btn {
-    }
-    .servises__galery {
-    }
-    .galery {
-    }
-    .galery__title {
-    }
-    .galery__img {
-    }
-    .galery-img {
+
+    .servises__gallery {
+      .swiper-container {
+      }
+      .swiper-wrapper {
+      }
+      .swiper-slide {
+      }
+      .gallery__img {
+      }
+      .swiper-button-prev {
+      }
+      .swiper-button-next {
+      }
+      .swiper-pagination {
+      }
     }
   }
-
   .main__information {
     .information {
     }

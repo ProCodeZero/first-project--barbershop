@@ -122,15 +122,19 @@ h1, h2, h3, h4, h5, h6 {
 
 .main {
   background: rgb(0, 0, 0);
-  background: linear-gradient(0deg, rgb(0, 0, 0) 78%, rgba(48, 48, 48, 0.8) 100%);
+  background: linear-gradient(0deg, rgb(0, 0, 0) 48%, rgba(48, 48, 48, 0.8) 100%);
 }
 .main .main__background {
-  width: 100%;
   position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 180%; /* Need a specific value to work */
   filter: grayscale(100%);
   z-index: -1;
 }
 .main .main__greeting {
+  width: 1024px;
   text-align: center;
 }
 .main .main__greeting .greeting__logo {
@@ -166,4 +170,57 @@ h1, h2, h3, h4, h5, h6 {
   font-style: normal;
   font-weight: 400;
   line-height: 150%; /* 24px */
+}
+.main .main-block-title {
+  color: var(--basic-extra-dark, #242424);
+  font-family: PT Sans Narrow;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 110%; /* 35.2px */
+  text-transform: uppercase;
+  padding-bottom: 28px;
+}
+.main .main__servises {
+  margin-left: auto;
+  margin-right: auto;
+  width: 940px;
+  height: 409px;
+  margin-top: 58px;
+  background-color: #fff;
+  color: black;
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+  overflow: hidden;
+}
+.main .main__servises .servises__popular-servises {
+  margin: 40px;
+}
+.main .main__servises .servises__popular-servises .popular-servises__list li {
+  color: black;
+  color: var(--basic-extra-dark, #242424);
+  font-family: PT Sans Narrow;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 140%; /* 28px */
+  text-transform: uppercase;
+  padding-bottom: 22px;
+}
+.main .main__servises .servises__popular-servises .popular-servises__check-all-btn {
+  display: flex;
+  height: 44px;
+  padding: 14px 20px;
+  align-items: start;
+  gap: 8px;
+  flex-shrink: 0;
+  background: var(--basic-black, #000);
+  color: #fff;
+  text-align: center;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 100%; /* 16px */
+  text-transform: uppercase;
+  margin-top: 10px;
 }

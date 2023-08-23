@@ -6,6 +6,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+    />
+    <link
       href="https://fonts.googleapis.com/css2?family=Lilita+One&family=PT+Sans+Narrow:wght@400;700&family=Raleway:wght@100&display=swap"
       rel="stylesheet"
     />
@@ -31,6 +35,7 @@
     </header>
     <main class="main">
       <img src="pictures/backgroundjpg.jpg" alt="" class="main__background" />
+			<!-- Приветствие Блок №1 -->
       <div class="main__greeting greeting">
         <div class="greeting__logo">
           <img
@@ -42,7 +47,11 @@
         <div class="greeting__labels">
           <div class="greeting__text-block-1 label-block">
             <h2 class="block-1__title label-title">Быстро</h2>
-            <img src="pictures/icons/bullet.svg" alt="*" class="block-1__img label-img" />
+            <img
+              src="pictures/icons/bullet.svg"
+              alt="*"
+              class="block-1__img label-img"
+            />
             <p class="block-1__paragraph label-paragraph">
               Мы делаем свою работу быстро! Два часа пролетят незаметно, и вы —
               счастливый обладатель стильной стрижки-минутки!
@@ -50,7 +59,11 @@
           </div>
           <div class="greeting__text-block-2 label-block">
             <h2 class="block-2__title label-title">Круто</h2>
-            <img src="pictures/icons/bullet.svg" alt="*" class="block-2__img label-img" />
+            <img
+              src="pictures/icons/bullet.svg"
+              alt="*"
+              class="block-2__img label-img"
+            />
             <p class="block-2__paragraph label-paragraph">
               Забудьте, как вы стриглись раньше.<br />Мы сделаем из вас звезду
               футбола или кино!<br />Во всяком случае внешне.
@@ -58,7 +71,11 @@
           </div>
           <div class="greeting__text-block-3 label-block">
             <h2 class="block-3__title label-title">Дорого</h2>
-            <img src="pictures/icons/bullet.svg" alt="*" class="block-3__img label-img" />
+            <img
+              src="pictures/icons/bullet.svg"
+              alt="*"
+              class="block-3__img label-img"
+            />
             <p class="block-2__paragraph label-paragraph">
               Наши мастера — профессионалы своего дела и не могут стоить дешево.
               к тому же, разве цена не даёт определённый статус?
@@ -66,7 +83,9 @@
           </div>
         </div>
       </div>
+			<!-- Услуги Блок №2 -->
       <div class="main__servises servises">
+				<!-- Популярные услуги -->
         <div class="servises__popular-servises popular-servises">
           <h2 class="popular-servises__title main-block-title">
             Популярные услуги
@@ -78,32 +97,55 @@
             <li>Комплексная стрижка</li>
           </ul>
           <button type="button" class="popular-servises__check-all-btn">
-            Посмотреть все
+            <p>Посмотреть все</p>
+            <img src="pictures/icons/arrow-right.svg" alt="" />
           </button>
         </div>
-        <div class="servises__galery galery">
-          <h2 class="galery__title main-block-title">Фотогалерея</h2>
-          <img
-            src="pictures/pictureOfWorking.jpg"
-            alt=""
-            class="galery__img galery-img"
-          />
-          <img
-            src="pictures/pictureOfWorking.jpg"
-            alt=""
-            class="galery__img galery-img"
-          />
-          <img
-            src="pictures/pictureOfWorking.jpg"
-            alt=""
-            class="galery__img galery-img"
-          /><img
-            src="pictures/pictureOfWorking.jpg"
-            alt=""
-            class="galery__img galery-img"
-          />
+
+				<!-- Галерея -->
+        <div class="servises__gallery gallery">
+          <h2 class="gallery__title main-block-title">Фотогалерея</h2>
+          <div class="gallery__swiper swiper-container">
+            <div class="swiper-wrapper">
+							<!-- Слайды -->
+              <div class="swiper-slide">
+                <img
+                  src="pictures/pictureOfWorking.jpg"
+                  alt=""
+                  class="gallery__img"
+                />
+              </div>
+              <div class="swiper-slide">
+                <img
+                  src="pictures/pictureOfWorking.jpg"
+                  alt=""
+                  class="gallery__img"
+                />
+              </div>
+              <div class="swiper-slide">
+                <img
+                  src="pictures/pictureOfWorking.jpg"
+                  alt=""
+                  class="gallery__img"
+                />
+              </div>
+              <div class="swiper-slide">
+                <img
+                  src="pictures/pictureOfWorking.jpg"
+                  alt=""
+                  class="gallery__img"
+                />
+              </div>
+            </div>
+						<!-- Стрелки управления -->
+						<div class="swiper-button-prev"></div>
+						<div class="swiper-button-next"></div>
+						<!-- Пагинация -->
+						<div class="swiper-pagination"></div>
+          </div>
         </div>
       </div>
+			<!-- Информация Блок №2 -->
       <div class="main__information information">
         <div class="information__contacts contacts">
           <h2 class="contacts__title main-block-title">Контакты</h2>
@@ -155,6 +197,7 @@
         </div>
       </div>
     </main>
+		<!-- Футер -->
     <footer class="footer">
       <div class="footer__info footer-left">
         <img
@@ -193,6 +236,7 @@
         </p>
       </div>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script src="js/script.js"></script>
   </body>
 </html>
