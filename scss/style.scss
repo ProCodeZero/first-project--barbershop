@@ -1,14 +1,134 @@
+@import "_zero_style";
+
+* {
+  font-family: "PT Sans", sans-serif;
+  color: white;
+}
 @import "_header";
 @import "_footer";
 
-* {
-  font-family: "PT Sans Narrow", sans-serif;
+.main {
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 1) 78%,
+    rgba(48, 48, 48, 0.8) 100%
+  );
+  .main__background {
+    width: 100%;
+    position: absolute;
+    filter: grayscale(100%);
+    z-index: -1;
+  }
+  .main__greeting {
+    text-align: center;
+    .greeting__logo {
+      grid-area: logo;
+      .logo-img {
+        margin-top: 64px;
+      }
+    }
+    .greeting__labels {
+      margin-top: 64px;
+      display: flex;
+      justify-content: space-around;
+    }
+    .label-block {
+      width: 277px;
+    }
+    .label-title {
+      color: #fff;
+      text-align: center;
+      font-family: "PT Sans Narrow";
+      font-size: 32px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 110%; /* 35.2px */
+      text-transform: uppercase;
+    }
+    .label-img {
+			padding: 16px 0;
+    }
+    .label-paragraph {
+      text-align: center;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 150%; /* 24px */
+    }
+  }
 }
 
-.header {
-	display: flex;
-	justify-content: space-around;
-	font-weight: 700;
-	line-height: 140%;
-	text-transform: uppercase;
+.main__servises {
+  .servises {
+  }
+  .servises__popular-servises {
+  }
+  .popular-servises {
+  }
+  .popular-servises__title {
+  }
+  .main-block-title {
+  }
+  .popular-servises__list {
+  }
+  .popular-servises__check-all-btn {
+  }
+  .servises__galery {
+  }
+  .galery {
+  }
+  .galery__title {
+  }
+  .galery__img {
+  }
+  .galery-img {
+  }
+}
+
+.main__information {
+  .information {
+  }
+  .information__contacts {
+  }
+  .contacts {
+  }
+  .contacts__title {
+  }
+  .contacts__subtitle {
+  }
+  .main-block-subtitle {
+  }
+  .contacts__info {
+  }
+  .contacts__phone-number {
+  }
+  .contacts__time-of-working {
+  }
+  .contacts__route {
+  }
+  .contacts__feedback {
+  }
+  .information__appointment {
+  }
+  .appointment {
+  }
+  .appointment__title {
+  }
+  .appointment__paragraph {
+  }
+  .appointment__form {
+  }
+  .full-form {
+  }
+  .full-form__date {
+  }
+  .full-form__time {
+  }
+  .full-form__phone {
+  }
+  .full-form__name {
+  }
+  .full-form__subscribe {
+  }
 }

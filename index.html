@@ -22,12 +22,15 @@
         </button>
       </div>
       <div class="header__group-2">
-        <button type="button" class="header__btn btn-find"></button
-        ><button type="button" class="header__btn btn-basket"></button
+        <button type="button" class="header__btn btn-find">
+          <img src="pictures/icons/search.svg" alt="ПОИСК" /></button
+        ><button type="button" class="header__btn btn-basket">
+          <img src="pictures/icons/cart.svg" alt="КОРЗИНА" /></button
         ><button type="button" class="header__btn btn-enter">Вход</button>
       </div>
     </header>
     <main class="main">
+      <img src="pictures/backgroundjpg.jpg" alt="" class="main__background" />
       <div class="main__greeting greeting">
         <div class="greeting__logo">
           <img
@@ -36,34 +39,38 @@
             class="logo-img"
           />
         </div>
-        <div class="greeting__text-block-1 block-1">
-          <h2 class="block-1__title">Быстро</h2>
-          <img src="pictures/icons/bullet.svg" alt="*" class="block-1__img" />
-          <p class="block-1__paragraph">
-            Мы делаем свою работу быстро! Два часа пролетят незаметно, и вы —
-            счастливый обладатель стильной стрижки-минутки!
-          </p>
-        </div>
-        <div class="greeting__text-block-2 block-2">
-          <h2 class="block-1__title">Круто</h2>
-          <img src="pictures/icons/bullet.svg" alt="*" class="block-1__img" />
-          <p class="block-1__paragraph">
-            Забудьте, как вы стриглись раньше.<br />Мы сделаем из вас звезду
-            футбола или кино!<br />Во всяком случае внешне.
-          </p>
-        </div>
-        <div class="greeting__text-block-3 block-3">
-          <h2 class="block-1__title">Дорого</h2>
-          <img src="pictures/icons/bullet.svg" alt="*" class="block-1__img" />
-          <p class="block-1__paragraph">
-            Наши мастера — профессионалы своего дела и не могут стоить дешево. к
-            тому же, разве цена не даёт определённый статус?
-          </p>
+        <div class="greeting__labels">
+          <div class="greeting__text-block-1 label-block">
+            <h2 class="block-1__title label-title">Быстро</h2>
+            <img src="pictures/icons/bullet.svg" alt="*" class="block-1__img label-img" />
+            <p class="block-1__paragraph label-paragraph">
+              Мы делаем свою работу быстро! Два часа пролетят незаметно, и вы —
+              счастливый обладатель стильной стрижки-минутки!
+            </p>
+          </div>
+          <div class="greeting__text-block-2 label-block">
+            <h2 class="block-2__title label-title">Круто</h2>
+            <img src="pictures/icons/bullet.svg" alt="*" class="block-2__img label-img" />
+            <p class="block-2__paragraph label-paragraph">
+              Забудьте, как вы стриглись раньше.<br />Мы сделаем из вас звезду
+              футбола или кино!<br />Во всяком случае внешне.
+            </p>
+          </div>
+          <div class="greeting__text-block-3 label-block">
+            <h2 class="block-3__title label-title">Дорого</h2>
+            <img src="pictures/icons/bullet.svg" alt="*" class="block-3__img label-img" />
+            <p class="block-2__paragraph label-paragraph">
+              Наши мастера — профессионалы своего дела и не могут стоить дешево.
+              к тому же, разве цена не даёт определённый статус?
+            </p>
+          </div>
         </div>
       </div>
       <div class="main__servises servises">
         <div class="servises__popular-servises popular-servises">
-          <h2 class="popular-servises__title main-block-title">Популярные услуги</h2>
+          <h2 class="popular-servises__title main-block-title">
+            Популярные услуги
+          </h2>
           <ul class="popular-servises__list">
             <li>Стрижка машинкой</li>
             <li>Стрижка усов</li>
@@ -100,11 +107,13 @@
       <div class="main__information information">
         <div class="information__contacts contacts">
           <h2 class="contacts__title main-block-title">Контакты</h2>
-          <h3 class="contacts__subtitle main-block-subtitle">Барбершоп «Бородинский»</h3>
+          <h3 class="contacts__subtitle main-block-subtitle">
+            Барбершоп «Бородинский»
+          </h3>
           <p class="contacts__info">
             Санкт-Петербург, набережная реки Карповки, 5, литера П.
           </p>
-          <h2 class="contacts__phone-number ">+7 800 555-35-35</h2>
+          <h2 class="contacts__phone-number">+7 800 555-35-35</h2>
           <h3 class="contacts__subtitle">Время работы</h3>
           <p class="contacts__time-of-working">
             пн—пт: с 10:00 до 22:00<br />сб—вс: с 10:00 до 19:00
@@ -157,19 +166,32 @@
           Санкт-Петербург, набережная реки Карповки, 5, литера П.
         </p>
         <h3 class="footer-left__phone">+7 800 555-86-28</h3>
-				<a href="" class="footer-left__link">Как нас найти?</a>
+        <a href="" class="footer-left__link">Как нас найти?</a>
       </div>
       <div class="footer__offers footer-middle">
-				<h3 class="footer-middle__title footer-title">Получайте лучшие предложения</h3>
-				<input class="footer-middle__email-form" type="text">
-			</div>
+        <h3 class="footer-middle__title footer-title">
+          Получайте лучшие предложения
+        </h3>
+        <input class="footer-middle__email-form" type="text" />
+      </div>
       <div class="footer__social-media footer-right">
-				<h3 class="footer-right__title footer-title">Давайте дружить</h3>
-				<button class="footer-right__btn btn-sotial-media" type="button"></button>
-				<button class="footer-right__btn btn-sotial-media" type="button"></button>
-				<button class="footer-right__btn btn-sotial-media" type="button"></button>
-				<p class="footer-right__signature">Created by <span class="creator">Hollow_DS</span></p>
-			</div>
+        <h3 class="footer-right__title footer-title">Давайте дружить</h3>
+        <button
+          class="footer-right__btn btn-sotial-media"
+          type="button"
+        ></button>
+        <button
+          class="footer-right__btn btn-sotial-media"
+          type="button"
+        ></button>
+        <button
+          class="footer-right__btn btn-sotial-media"
+          type="button"
+        ></button>
+        <p class="footer-right__signature">
+          Created by <span class="creator">Hollow_DS</span>
+        </p>
+      </div>
     </footer>
     <script src="js/script.js"></script>
   </body>
