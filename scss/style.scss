@@ -62,44 +62,11 @@
 
   // *Блок_1
   .main__servises {
-    background-color: #fff;
-    .servises__popular-servises {
-      color: #000;
-    }
     .main-block-title {
-      color: var(--basic-extra-dark, #242424);
-      font-family: "PT Sans Narrow";
-      font-size: 32px;
-      font-style: normal;
-      font-weight: 700;
-      line-height: 110%; /* 35.2px */
-      text-transform: uppercase;
     }
     .popular-servises__list li {
-      color: var(--basic-extra-dark, #242424);
-      font-family: "PT Sans Narrow";
-      font-size: 20px;
-      font-style: normal;
-      font-weight: 700;
-      line-height: 140%; /* 28px */
-      text-transform: uppercase;
     }
     .popular-servises__check-all-btn {
-      display: inline-flex;
-      height: 44px;
-      padding: 14px 20px;
-      align-items: flex-start;
-      gap: 8px;
-      flex-shrink: 0;
-      color: #fff;
-      text-align: center;
-      font-family: "PT Sans";
-      font-size: 16px;
-      font-style: normal;
-      font-weight: 700;
-      line-height: 100%; /* 16px */
-      text-transform: uppercase;
-      background: var(--basic-black, #000);
     }
     .servises__galery {
     }
