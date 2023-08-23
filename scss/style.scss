@@ -20,6 +20,8 @@
     filter: grayscale(100%);
     z-index: -1;
   }
+
+  // * Приветствие
   .main__greeting {
     text-align: center;
     .greeting__logo {
@@ -47,7 +49,7 @@
       text-transform: uppercase;
     }
     .label-img {
-			padding: 16px 0;
+      padding: 16px 0;
     }
     .label-paragraph {
       text-align: center;
@@ -57,78 +59,104 @@
       line-height: 150%; /* 24px */
     }
   }
-}
 
-.main__servises {
-  .servises {
+  // *Блок_1
+  .main__servises {
+    background-color: #fff;
+    .servises__popular-servises {
+      color: #000;
+    }
+    .main-block-title {
+      color: var(--basic-extra-dark, #242424);
+      font-family: "PT Sans Narrow";
+      font-size: 32px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 110%; /* 35.2px */
+      text-transform: uppercase;
+    }
+    .popular-servises__list li {
+      color: var(--basic-extra-dark, #242424);
+      font-family: "PT Sans Narrow";
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 140%; /* 28px */
+      text-transform: uppercase;
+    }
+    .popular-servises__check-all-btn {
+      display: inline-flex;
+      height: 44px;
+      padding: 14px 20px;
+      align-items: flex-start;
+      gap: 8px;
+      flex-shrink: 0;
+      color: #fff;
+      text-align: center;
+      font-family: "PT Sans";
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 100%; /* 16px */
+      text-transform: uppercase;
+      background: var(--basic-black, #000);
+    }
+    .servises__galery {
+    }
+    .galery {
+    }
+    .galery__title {
+    }
+    .galery__img {
+    }
+    .galery-img {
+    }
   }
-  .servises__popular-servises {
-  }
-  .popular-servises {
-  }
-  .popular-servises__title {
-  }
-  .main-block-title {
-  }
-  .popular-servises__list {
-  }
-  .popular-servises__check-all-btn {
-  }
-  .servises__galery {
-  }
-  .galery {
-  }
-  .galery__title {
-  }
-  .galery__img {
-  }
-  .galery-img {
-  }
-}
 
-.main__information {
-  .information {
-  }
-  .information__contacts {
-  }
-  .contacts {
-  }
-  .contacts__title {
-  }
-  .contacts__subtitle {
-  }
-  .main-block-subtitle {
-  }
-  .contacts__info {
-  }
-  .contacts__phone-number {
-  }
-  .contacts__time-of-working {
-  }
-  .contacts__route {
-  }
-  .contacts__feedback {
-  }
-  .information__appointment {
-  }
-  .appointment {
-  }
-  .appointment__title {
-  }
-  .appointment__paragraph {
-  }
-  .appointment__form {
-  }
-  .full-form {
-  }
-  .full-form__date {
-  }
-  .full-form__time {
-  }
-  .full-form__phone {
-  }
-  .full-form__name {
-  }
-  .full-form__subscribe {
+  .main__information {
+    .information {
+    }
+    .information__contacts {
+    }
+    .contacts {
+    }
+    .contacts__title {
+    }
+    .contacts__subtitle {
+    }
+    .main-block-subtitle {
+    }
+    .contacts__info {
+    }
+    .contacts__phone-number {
+    }
+    .contacts__time-of-working {
+    }
+    .contacts__route {
+    }
+    .contacts__feedback {
+    }
+    .information__appointment {
+    }
+    .appointment {
+    }
+    .appointment__title {
+    }
+    .appointment__paragraph {
+    }
+    .appointment__form {
+    }
+    .full-form {
+    }
+    .full-form__date {
+    }
+    .full-form__time {
+    }
+    .full-form__phone {
+    }
+    .full-form__name {
+    }
+    .full-form__subscribe {
+    }
   }
 }
