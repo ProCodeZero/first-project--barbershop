@@ -14,6 +14,7 @@
     rgba(0, 0, 0, 1) 48%,
     rgba(48, 48, 48, 0.8) 100%
   );
+	overflow: hidden;
   .main__background {
     position: absolute;
     top: 0;
@@ -67,7 +68,7 @@
   // * Блок_1
   .main-block-title {
     color: var(--basic-extra-dark, #242424);
-    font-family: PT Sans Narrow;
+    font-family: "PT Sans Narrow";
     font-size: 32px;
     font-style: normal;
     font-weight: 700;
@@ -85,14 +86,13 @@
     color: black;
     display: grid;
     grid-template-columns: repeat(2, 50%);
-    overflow: hidden;
     // * Услуги
     .servises__popular-servises {
       margin: 40px;
       .popular-servises__list li {
         color: black;
         color: var(--basic-extra-dark, #242424);
-        font-family: PT Sans Narrow;
+        font-family: "PT Sans Narrow";
         font-size: 20px;
         font-style: normal;
         font-weight: 700;
@@ -120,20 +120,20 @@
     }
 
     .servises__gallery {
-			display: inline;
-			margin: 40px;
+      display: inline;
+      margin: 40px;
       .swiper-container {
-				width: 400px;
-				overflow: hidden;
-				position: relative;
+        width: 400px;
+        overflow: hidden;
+        position: relative;
       }
       .swiper-wrapper {
       }
       .swiper-slide {
       }
       .gallery__img {
-				max-width: 390px;
-				margin-bottom: 36px;
+        max-width: 390px;
+        margin-bottom: 36px;
       }
       .swiper-button-prev {
       }
@@ -144,39 +144,114 @@
     }
   }
   .main__information {
-    .information {
-    }
+    margin-left: auto;
+    margin-right: auto;
+    width: 940px;
+    height: 409px;
+    margin-top: 31px;
+    background-color: #fff;
+    color: black;
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    margin-bottom: 61px;
     .information__contacts {
+      margin: 40px;
+      .contacts__subtitle {
+        color: var(--special-neutral, #af7842);
+        font-family: "PT Sans Narrow";
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 140%; /* 28px */
+        text-transform: uppercase;
+      }
     }
-    .contacts {
+    .contacts__block-1 {
+      display: flex;
+      width: 350px;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 8px;
+      padding-bottom: 22px;
+      .contacts__title {
+        padding-bottom: 24px;
+      }
+      .contacts__info {
+        color: var(--basic-extra-dark, #242424);
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 150%; /* 24px */
+      }
+      .contacts__phone-number {
+        color: var(--basic-extra-dark, #242424);
+        font-family: "PT Sans Narrow";
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 120%; /* 28.8px */
+        text-decoration-line: underline;
+        text-transform: uppercase;
+      }
     }
-    .contacts__title {
+    .contacts__block-2 {
+      .contacts__time-of-working {
+        color: var(--basic-extra-dark, #242424);
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 150%; /* 24px */
+      }
+      .contacts__route {
+        display: inline-flex;
+        height: 44px;
+        padding: 14px 20px;
+        align-items: flex-start;
+        gap: 8px;
+        flex-shrink: 0;
+        margin-top: 21px;
+        background-color: black;
+        color: #fff;
+        text-align: center;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 100%; /* 16px */
+        text-transform: uppercase;
+      }
+      .contacts__feedback {
+        height: 44px;
+        padding: 14px 20px;
+        margin-left: 16px;
+        align-items: flex-start;
+        gap: 8px;
+        background-color: white;
+        color: var(--basic-extra-dark, #242424);
+        text-align: center;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 100%; /* 16px */
+        text-transform: uppercase;
+      }
     }
-    .contacts__subtitle {
-    }
-    .main-block-subtitle {
-    }
-    .contacts__info {
-    }
-    .contacts__phone-number {
-    }
-    .contacts__time-of-working {
-    }
-    .contacts__route {
-    }
-    .contacts__feedback {
-    }
+
     .information__appointment {
+      margin: 40px;
     }
     .appointment {
     }
-    .appointment__title {
-    }
     .appointment__paragraph {
+      color: var(--basic-dark, #595959);
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 140%; /* 19.6px */
+			padding-bottom: 24px;
     }
     .appointment__form {
-    }
-    .full-form {
+			border: 2px solid #000;
+			border-radius: 12px;
     }
     .full-form__date {
     }
