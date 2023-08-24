@@ -7,16 +7,26 @@
 @import "_header";
 @import "_footer";
 
-body{
-	background-color: #000;
+%formElem {
+  display: flex;
+  height: 74px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+body {
+  background-color: #000;
 }
 .main {
   background: rgb(0, 0, 0);
   background: linear-gradient(
-    0deg,
-    rgba(0, 0, 0, 1) 48%,
-    rgba(48, 48, 48, 0.8) 100%
-  ) no-repeat;
+      0deg,
+      rgba(0, 0, 0, 1) 48%,
+      rgba(48, 48, 48, 0.8) 100%
+    )
+    no-repeat;
 
   .main__background {
     position: absolute;
@@ -30,8 +40,8 @@ body{
 
   // * Приветствие
   .main__greeting {
-		margin-left: auto;
-		margin-right: auto;
+    margin-left: auto;
+    margin-right: auto;
     width: 100%;
     text-align: center;
     .greeting__logo {
@@ -126,7 +136,7 @@ body{
       }
     }
 
-		// * Галерея Блок_1.2
+    // * Галерея Блок_1.2
     .servises__gallery {
       display: inline;
       margin: 40px;
@@ -152,12 +162,12 @@ body{
     }
   }
 
-	// * Блок_2
+  // * Блок_2
   .main__information {
     margin-left: auto;
     margin-right: auto;
     width: 940px;
-    height: 409px;
+    height: 431px;
     margin-top: 31px;
     background-color: #fff;
     color: black;
@@ -165,7 +175,7 @@ body{
     grid-template-columns: repeat(2, 50%);
     margin-bottom: 61px;
 
-		// * Контакты Блок_2.1
+    // * Контакты Блок_2.1
     .information__contacts {
       margin: 40px;
       .contacts__subtitle {
@@ -248,11 +258,9 @@ body{
       }
     }
 
-		// * Записаться Блок_2.2
+    // * Записаться Блок_2.2
     .information__appointment {
       margin: 40px;
-    }
-    .appointment {
     }
     .appointment__paragraph {
       color: var(--basic-dark, #595959);
@@ -263,72 +271,72 @@ body{
       padding-bottom: 24px;
     }
     .appointment__form {
-    }
-    .top-form {
-      display: inline-flex;
-      align-items: flex-start;
-      gap: 17px;
-    }
-    .full-form__date {
-      display: flex;
-      width: 114px;
-      height: 74px;
-      flex-direction: column;
-      justify-content: center;
-      align-items: flex-start;
-      gap: 8px;
-      label {
+      .full-form__label {
         display: flex;
         height: 22px;
         align-items: center;
         gap: 2px;
         flex-shrink: 0;
       }
-    }
-    .label__text {
-      color: var(--basic-extra-dark, #242424);
-      font-size: 16px;
-      font-style: normal;
-      font-weight: 700;
-      line-height: 140%; /* 22.4px */
-      text-transform: uppercase;
-    }
-    .full-form__time {
-      display: flex;
-      width: 74px;
-      height: 74px;
-      flex-direction: column;
-      justify-content: center;
-      align-items: flex-start;
-      gap: 8px;
-    }
-    .full-form__phone {
-      display: flex;
-      width: 208px;
-      height: 74px;
-      flex-direction: column;
-      justify-content: center;
-      align-items: flex-start;
-      gap: 8px;
-    }
-    .full-form__name {
-      display: flex;
-      width: 430px;
-      height: 74px;
-      flex-direction: column;
-      justify-content: center;
-      align-items: flex-start;
-      gap: 8px;
-      flex-shrink: 0;
-    }
-    .full-form__subscribe {
-      display: flex;
-      width: 130px;
-      height: 44px;
-      padding: 14px 20px;
-      align-items: flex-start;
-      gap: 8px;
-      flex-shrink: 0;
+      .full-form__input {
+        font-size: 12px;
+        border: 2px solid var(--spcial-light, #dbb590);
+        color: #000;
+        padding: 10px 16px;
+        width: 100%;
+      }
+      .label__text {
+        color: var(--basic-extra-dark, #242424);
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 140%; /* 22.4px */
+        text-transform: uppercase;
+      }
+      .top-form {
+        width: 100%;
+        display: inline-flex;
+        align-items: flex-start;
+        gap: 17px;
+      }
+      .full-form__date {
+        @extend %formElem;
+        width: 114px;
+      }
+
+      .full-form__time {
+        @extend %formElem;
+        width: 74px;
+      }
+      .full-form__phone {
+        @extend %formElem;
+        width: 179px;
+      }
+			.bottom-form{
+				margin-top: 7px;
+			}
+      .full-form__name {
+        @extend %formElem;
+        width: 390px;
+      }
+
+      .full-form__subscribe {
+				display: inline-flex;
+        height: 44px;
+        padding: 14px 20px;
+        align-items: flex-start;
+        gap: 8px;
+        flex-shrink: 0;
+        margin-top: 21px;
+        background-color: black;
+        color: #fff;
+        text-align: center;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 100%; /* 16px */
+        text-transform: uppercase;
+      }
     }
   }
 }

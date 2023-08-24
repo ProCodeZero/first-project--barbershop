@@ -171,6 +171,8 @@
             </button>
           </div>
         </div>
+
+        <!-- Записаться Блок №2 -->
         <div class="information__appointment appointment">
           <h2 class="appointment__title main-block-title">Записаться</h2>
           <p class="appointment__paragraph">
@@ -180,33 +182,39 @@
           <form action="#" method="get" class="appointment__form full-form">
             <div class="top-form">
               <div class="full-form__date">
-                <label for="date"
+                <label class="full-form__label" for="date"
                   ><p class="label__text">Дата</p>
                   <img src="pictures/icons/info.svg" alt="" class="label__img"
                 /></label>
-                <input type="date" name="date" />
+                <input class="full-form__input" type="text" name="date" />
               </div>
               <div class="full-form__time">
-                <label for="time"
+                <label class="full-form__label" for="time"
                   ><p class="label__text">Время</p>
                   <img src="pictures/icons/info.svg" alt="" class="label__img"
                 /></label>
-                <input type="time" name="time" />
+                <input class="full-form__input" type="text" name="time" />
               </div>
               <div class="full-form__phone">
-                <label for="phone"><p class="label__text">Телефон</p></label>
-                <input type="tel" name="phone" />
+                <label class="full-form__label" for="phone"
+                  ><p class="label__text">Телефон</p></label
+                >
+                <input class="full-form__input" type="tel" name="phone" />
               </div>
             </div>
-            <div class="full-form__name">
-              <label for="name">Ваше имя</label>
-              <input type="text" name="name" />
+            <div class="bottom-form">
+              <div class="full-form__name">
+                <label class="full-form__label" for="name"
+                  ><p class="label__text">Ваше имя</p></label
+                >
+                <input class="full-form__input" type="text" name="name" />
+              </div>
             </div>
-            <input
-              class="full-form__subscribe"
-              type="submit"
-              value="Записаться"
-            />
+            <div class="full-form__subscribe-container">
+              <button class="full-form__subscribe" type="submit">
+                Записаться
+              </button>
+            </div>
           </form>
         </div>
       </div>
