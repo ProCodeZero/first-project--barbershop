@@ -34,7 +34,9 @@
       </div>
     </header>
     <main class="main">
-      <img src="pictures/backgroundjpg.jpg" alt="" class="main__background" />
+      <div class="main__background-container">
+        <img src="pictures/backgroundjpg.jpg" alt="" class="main__background" />
+      </div>
       <!-- Приветствие Блок №1 -->
       <div class="main__greeting greeting">
         <div class="greeting__logo">
@@ -163,9 +165,7 @@
             <p class="contacts__time-of-working">
               пн—пт: с 10:00 до 22:00<br />сб—вс: с 10:00 до 19:00
             </p>
-            <button type="button" class="contacts__route">
-							Как проехать
-						</button>
+            <button type="button" class="contacts__route">Как проехать</button>
             <button type="button" class="contacts__feedback">
               Обратная связь
             </button>
@@ -178,17 +178,25 @@
             брони.
           </p>
           <form action="#" method="get" class="appointment__form full-form">
-            <div class="full-form__date">
-              <label for="date">Дата</label>
-              <input type="date" name="date" />
-            </div>
-            <div class="full-form__time">
-              <label for="time">Время</label>
-              <input type="time" name="time" />
-            </div>
-            <div class="full-form__phone">
-              <label for="phone">Телефон</label>
-              <input type="tel" name="phone" />
+            <div class="top-form">
+              <div class="full-form__date">
+                <label for="date"
+                  ><p class="label__text">Дата</p>
+                  <img src="pictures/icons/info.svg" alt="" class="label__img"
+                /></label>
+                <input type="date" name="date" />
+              </div>
+              <div class="full-form__time">
+                <label for="time"
+                  ><p class="label__text">Время</p>
+                  <img src="pictures/icons/info.svg" alt="" class="label__img"
+                /></label>
+                <input type="time" name="time" />
+              </div>
+              <div class="full-form__phone">
+                <label for="phone"><p class="label__text">Телефон</p></label>
+                <input type="tel" name="phone" />
+              </div>
             </div>
             <div class="full-form__name">
               <label for="name">Ваше имя</label>
