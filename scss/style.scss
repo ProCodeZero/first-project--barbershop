@@ -155,9 +155,12 @@ body {
       }
       .swiper-button-prev {
       }
-      .swiper-button-next {
+      .swiper-button-next::after {
+        background-image: url(/pictures/icons/arrow-right.svg);
+        background-repeat: no-repeat;
+        background-position: center;
       }
-      .swiper-pagination {
+      .swiper-pagination::after {
       }
     }
   }
@@ -312,16 +315,16 @@ body {
         @extend %formElem;
         width: 179px;
       }
-			.bottom-form{
-				margin-top: 7px;
-			}
+      .bottom-form {
+        margin-top: 7px;
+      }
       .full-form__name {
         @extend %formElem;
         width: 390px;
       }
 
       .full-form__subscribe {
-				display: inline-flex;
+        display: inline-flex;
         height: 44px;
         padding: 14px 20px;
         align-items: flex-start;

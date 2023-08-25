@@ -1,7 +1,7 @@
 new Swiper('.gallery__swiper', {
-	navigator: {
+	navigation: {
 		nextEl: '.swiper-button-next',
-		pervEl: '.swiper-button-prev'
+		prevEl: '.swiper-button-prev'
 	},
 	pagination: {
 		el: '.swiper-pagination',
