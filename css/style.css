@@ -213,19 +213,29 @@ h1, h2, h3, h4, h5, h6 {
   padding-bottom: 14px;
 }
 .footer-right .btn-sotial-media {
+  position: relative;
+  display: inline-flex;
   align-items: center;
+  background-color: #000000;
+  margin-bottom: 53px;
+}
+.footer-right .btn-sotial-media p {
+  color: var(--basic-white, #ffffff);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 140%; /* 19.6px */
+  padding: 10px;
+}
+.footer-right .btn-sotial-media img {
   width: 44px;
-  height: 44px;
-  background-color: black;
-  margin-bottom: 36px;
 }
 .footer-right .footer-right__signature {
   font-size: 14px;
 }
 .footer-right .creator {
-  font-family: "PT Sans Narrow";
   font-weight: 700;
-  font-size: 18px;
+  color: #cc8742;
 }
 
 .main .main__information .appointment__form .full-form__name, .main .main__information .appointment__form .full-form__phone, .main .main__information .appointment__form .full-form__time, .main .main__information .appointment__form .full-form__date {
@@ -359,10 +369,12 @@ body {
   max-width: 390px;
   margin-bottom: 36px;
 }
-.main .main__servises .servises__gallery .swiper-button-next::after {
-  background-image: url(/pictures/icons/arrow-right.svg);
-  background-repeat: no-repeat;
-  background-position: center;
+.main .main__servises .servises__gallery .swiper-button-prev {
+  background-color: #000;
+  text-align: center;
+}
+.main .main__servises .servises__gallery .swiper-button-prev img {
+  z-index: 2;
 }
 .main .main__information {
   margin-left: auto;

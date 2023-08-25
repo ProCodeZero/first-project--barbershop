@@ -154,14 +154,18 @@ body {
         margin-bottom: 36px;
       }
       .swiper-button-prev {
+				background-color: #000;
+				text-align: center;
+				img{
+					z-index: 2;
+				}
       }
-      .swiper-button-next::after {
-        background-image: url(/pictures/icons/arrow-right.svg);
-        background-repeat: no-repeat;
-        background-position: center;
+      .swiper-button-next {
+        
       }
-      .swiper-pagination::after {
-      }
+      .my-pagination{
+
+			}
     }
   }
 
