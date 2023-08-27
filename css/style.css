@@ -247,6 +247,7 @@ h1, h2, h3, h4, h5, h6 {
   font-style: normal;
   font-weight: 700;
   line-height: 150%; /* 24px */
+  z-index: 2;
 }
 
 .popup {
@@ -256,6 +257,22 @@ h1, h2, h3, h4, h5, h6 {
   background-color: rgba(0, 0, 0, 0.8);
   top: 0;
   left: 0;
+  opacity: 0;
+  visibility: hidden;
+  overflow-y: auto;
+  overflow-x: hidden;
+  transition: all 0.8s ease 0s;
+}
+
+.popup.open {
+  opacity: 1;
+  visibility: visible;
+  transition: all 0.8s ease 0s;
+}
+
+.popup.open .popup__content {
+  transform: perspective(600px) translate(0px, 0%) rotate(0deg);
+  opacity: 1;
 }
 
 .popup__body {
@@ -267,6 +284,7 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
   justify-content: center;
   padding: 30px 10px;
+  transition: all 0.8s ease 0s;
 }
 
 .popup__content {
@@ -275,6 +293,9 @@ h1, h2, h3, h4, h5, h6 {
   max-width: 800px;
   padding: 30px;
   position: relative;
+  transition: all 0.8s ease 0s;
+  opacity: 0;
+  transform: perspective(600px) translate(0px, -100%) rotate(10deg);
 }
 
 .popup__close {
@@ -305,32 +326,53 @@ h1, h2, h3, h4, h5, h6 {
 
 .popup__box-2 {
   display: flex;
+  align-items: center;
   justify-content: space-between;
   margin-bottom: 16px;
 }
 
-.popup__checkbox-container {
-  display: inherit;
+.check {
+  color: black;
+  padding-left: 36px;
+  position: relative;
 }
 
-.checkbox {
-  align-self: center;
-  display: inline-flex;
+.check__input {
+  position: absolute;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
+.check__box {
+  top: -2px;
+  margin-left: -36px;
+  position: absolute;
   width: 20px;
   height: 20px;
-  margin-right: 16px;
-  justify-content: center;
-  align-items: center;
-  flex-shrink: 0;
+  border: 2px solid var(--basic-extra-dark, #242424);
 }
 
-.checkbox-text {
-  text-align: left;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 150%; /* 24px */
-  color: black;
+.check__input:checked + .check__box {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16' fill='none'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M8.00008 9.41421L11.543 12.9571L12.9572 11.5429L9.41429 8L12.9572 4.45711L11.543 3.04289L8.00008 6.58579L4.45718 3.04289L3.04297 4.45711L6.58586 8L3.04297 11.5429L4.45718 12.9571L8.00008 9.41421Z' fill='%23242424'/%3E%3C/svg%3E");
+}
+
+.check__input:focus + .check__box {
+  border: 2px solid var(--special-neutral, #af7842);
+}
+
+.check__input:checked:focus + .check__box {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16' fill='none'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M8.00008 9.41421L11.543 12.9571L12.9572 11.5429L9.41429 8L12.9572 4.45711L11.543 3.04289L8.00008 6.58579L4.45718 3.04289L3.04297 4.45711L6.58586 8L3.04297 11.5429L4.45718 12.9571L8.00008 9.41421Z' fill='%23242424'/%3E%3C/svg%3E");
+  border: 2px solid var(--special-neutral, #af7842);
+}
+
+.check__input:disabled + .check__box {
+  border: 2px solid var(--special-neutral, #ffffff);
+}
+
+.check__input:checked:disabled + .check__box {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16' fill='none'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M8.00008 9.41421L11.543 12.9571L12.9572 11.5429L9.41429 8L12.9572 4.45711L11.543 3.04289L8.00008 6.58579L4.45718 3.04289L3.04297 4.45711L6.58586 8L3.04297 11.5429L4.45718 12.9571L8.00008 9.41421Z' fill='%23242424'/%3E%3C/svg%3E");
+  border: 2px solid var(--special-neutral, #ffffff);
 }
 
 .foggot-password {
@@ -387,6 +429,10 @@ h1, h2, h3, h4, h5, h6 {
 
 body {
   background-color: #000;
+}
+
+body.lock {
+  overflow: hidden;
 }
 
 .main {
@@ -497,6 +543,7 @@ body {
 .main .main__servises .servises__gallery {
   display: inline;
   margin: 40px;
+  z-index: 0;
 }
 .main .main__servises .servises__gallery .swiper-container {
   width: 400px;
@@ -510,9 +557,6 @@ body {
 .main .main__servises .servises__gallery .swiper-button-prev {
   background-color: #000;
   text-align: center;
-}
-.main .main__servises .servises__gallery .swiper-button-prev img {
-  z-index: 2;
 }
 .main .main__information {
   margin-left: auto;

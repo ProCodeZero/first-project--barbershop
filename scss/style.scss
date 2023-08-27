@@ -20,6 +20,10 @@
 body {
   background-color: #000;
 }
+body.lock {
+	overflow: hidden;
+}
+
 .main {
   background: rgb(0, 0, 0);
   background: linear-gradient(
@@ -37,6 +41,7 @@ body {
     width: 100%; /* Need a specific value to work */
     filter: grayscale(100%);
     z-index: -1;
+
   }
 
   // * Приветствие
@@ -141,6 +146,7 @@ body {
     .servises__gallery {
       display: inline;
       margin: 40px;
+			z-index: 0;
       .swiper-container {
         width: 400px;
         overflow: hidden;
@@ -157,9 +163,6 @@ body {
       .swiper-button-prev {
 				background-color: #000;
 				text-align: center;
-				img{
-					z-index: 2;
-				}
       }
       .swiper-button-next {
         

@@ -3,8 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link type="Image/x-icon" href="pictures/icons/fav-ico.ico" rel="icon">
-	
+    <link type="Image/x-icon" href="pictures/icons/fav-ico.ico" rel="icon" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -19,274 +18,291 @@
     <title>Final quest</title>
   </head>
   <body>
-    <header class="header">
-      <div class="header__group-1">
-        <button type="button" class="header__btn btn-us">О нас</button
-        ><button type="button" class="header__btn btn-catalog">Каталог</button
-        ><button type="button" class="header__btn btn-questions">
-          Частые вопросы
-        </button>
-      </div>
-      <div class="header__group-2">
-        <button type="button" class="header__btn btn-find">
-          <img src="pictures/icons/search.svg" alt="ПОИСК" /></button
-        ><button type="button" class="header__btn btn-basket">
-          <img src="pictures/icons/cart.svg" alt="КОРЗИНА" /></button
-        ><button type="button" class="header__btn btn-enter">Вход</button>
-      </div>
-    </header>
-    <main class="main">
-      <div class="main__background-container">
-        <img src="pictures/backgroundjpg.jpg" alt="" class="main__background" />
-      </div>
-      <!-- Приветствие Блок №1 -->
-      <div class="main__greeting greeting">
-        <div class="greeting__logo">
-          <img
-            src="pictures/icons/logo-full-dark.svg"
-            alt="Logo"
-            class="logo-img"
-          />
-        </div>
-        <div class="greeting__labels">
-          <div class="greeting__text-block-1 label-block">
-            <h2 class="block-1__title label-title">Быстро</h2>
-            <img
-              src="pictures/icons/bullet.svg"
-              alt="*"
-              class="block-1__img label-img"
-            />
-            <p class="block-1__paragraph label-paragraph">
-              Мы делаем свою работу быстро! Два часа пролетят незаметно, и вы —
-              счастливый обладатель стильной стрижки-минутки!
-            </p>
-          </div>
-          <div class="greeting__text-block-2 label-block">
-            <h2 class="block-2__title label-title">Круто</h2>
-            <img
-              src="pictures/icons/bullet.svg"
-              alt="*"
-              class="block-2__img label-img"
-            />
-            <p class="block-2__paragraph label-paragraph">
-              Забудьте, как вы стриглись раньше.<br />Мы сделаем из вас звезду
-              футбола или кино!<br />Во всяком случае внешне.
-            </p>
-          </div>
-          <div class="greeting__text-block-3 label-block">
-            <h2 class="block-3__title label-title">Дорого</h2>
-            <img
-              src="pictures/icons/bullet.svg"
-              alt="*"
-              class="block-3__img label-img"
-            />
-            <p class="block-2__paragraph label-paragraph">
-              Наши мастера — профессионалы своего дела и не могут стоить дешево.
-              к тому же, разве цена не даёт определённый статус?
-            </p>
-          </div>
-        </div>
-      </div>
-      <!-- Услуги Блок №2 -->
-      <div class="main__servises servises">
-        <!-- Популярные услуги -->
-        <div class="servises__popular-servises popular-servises">
-          <h2 class="popular-servises__title main-block-title">
-            Популярные услуги
-          </h2>
-          <ul class="popular-servises__list">
-            <li>Стрижка машинкой</li>
-            <li>Стрижка усов</li>
-            <li>Груминг</li>
-            <li>Комплексная стрижка</li>
-          </ul>
-          <button type="button" class="popular-servises__check-all-btn">
-            <p>Посмотреть все</p>
-            <img src="pictures/icons/arrow-right.svg" alt="" />
+    <div class="wrapper">
+      <header class="header">
+        <div class="header__group-1">
+          <button type="button" class="header__btn btn-us">О нас</button
+          ><button type="button" class="header__btn btn-catalog">Каталог</button
+          ><button type="button" class="header__btn btn-questions">
+            Частые вопросы
           </button>
         </div>
-
-        <!-- Галерея -->
-        <div class="servises__gallery gallery">
-          <h2 class="gallery__title main-block-title">Фотогалерея</h2>
-          <div class="gallery__swiper swiper-container">
-            <div class="swiper-wrapper">
-              <!-- Слайды -->
-              <div class="swiper-slide">
-                <img
-                  src="pictures/pictureOfWorking.jpg"
-                  alt=""
-                  class="gallery__img"
-                />
-              </div>
-              <div class="swiper-slide">
-                <img
-                  src="pictures/pictureOfWorking.jpg"
-                  alt=""
-                  class="gallery__img"
-                />
-              </div>
-              <div class="swiper-slide">
-                <img
-                  src="pictures/pictureOfWorking.jpg"
-                  alt=""
-                  class="gallery__img"
-                />
-              </div>
-              <div class="swiper-slide">
-                <img
-                  src="pictures/pictureOfWorking.jpg"
-                  alt=""
-                  class="gallery__img"
-                />
-              </div>
+        <div class="header__group-2">
+          <button type="button" class="header__btn btn-find">
+            <img src="pictures/icons/search.svg" alt="ПОИСК" /></button
+          ><button type="button" class="header__btn btn-basket">
+            <img src="pictures/icons/cart.svg" alt="КОРЗИНА" /></button
+          ><a
+            href="#popup"
+            type="button"
+            class="header__btn btn-enter popup-link"
+            >Вход</a
+          >
+        </div>
+      </header>
+      <main class="main">
+        <div class="main__background-container">
+          <img
+            src="pictures/backgroundjpg.jpg"
+            alt=""
+            class="main__background"
+          />
+        </div>
+        <!-- Приветствие Блок №1 -->
+        <div class="main__greeting greeting">
+          <div class="greeting__logo">
+            <img
+              src="pictures/icons/logo-full-dark.svg"
+              alt="Logo"
+              class="logo-img"
+            />
+          </div>
+          <div class="greeting__labels">
+            <div class="greeting__text-block-1 label-block">
+              <h2 class="block-1__title label-title">Быстро</h2>
+              <img
+                src="pictures/icons/bullet.svg"
+                alt="*"
+                class="block-1__img label-img"
+              />
+              <p class="block-1__paragraph label-paragraph">
+                Мы делаем свою работу быстро! Два часа пролетят незаметно, и вы
+                — счастливый обладатель стильной стрижки-минутки!
+              </p>
             </div>
-            <!-- Стрелки управления -->
-            <div class="swiper-button-prev my-prev">
-              <img src="pictures/icons/arrow-left.svg" alt="" />
+            <div class="greeting__text-block-2 label-block">
+              <h2 class="block-2__title label-title">Круто</h2>
+              <img
+                src="pictures/icons/bullet.svg"
+                alt="*"
+                class="block-2__img label-img"
+              />
+              <p class="block-2__paragraph label-paragraph">
+                Забудьте, как вы стриглись раньше.<br />Мы сделаем из вас звезду
+                футбола или кино!<br />Во всяком случае внешне.
+              </p>
             </div>
-            <div class="swiper-button-next"></div>
-            <!-- Пагинация -->
-            <div class="swiper-pagination my-pagination"></div>
+            <div class="greeting__text-block-3 label-block">
+              <h2 class="block-3__title label-title">Дорого</h2>
+              <img
+                src="pictures/icons/bullet.svg"
+                alt="*"
+                class="block-3__img label-img"
+              />
+              <p class="block-2__paragraph label-paragraph">
+                Наши мастера — профессионалы своего дела и не могут стоить
+                дешево. к тому же, разве цена не даёт определённый статус?
+              </p>
+            </div>
           </div>
         </div>
-      </div>
-      <!-- Информация Блок №2 -->
-      <div class="main__information information">
-        <div class="information__contacts contacts">
-          <h2 class="contacts__title main-block-title">Контакты</h2>
-          <div class="contacts__block-1">
-            <h3 class="contacts__subtitle main-block-subtitle">
-              Барбершоп «Бородинский»
-            </h3>
-            <p class="contacts__info">
-              Санкт-Петербург, набережная реки Карповки, 5, литера П.
-            </p>
-            <h2 class="contacts__phone-number">+7 800 555-35-35</h2>
+        <!-- Услуги Блок №2 -->
+        <div class="main__servises servises">
+          <!-- Популярные услуги -->
+          <div class="servises__popular-servises popular-servises">
+            <h2 class="popular-servises__title main-block-title">
+              Популярные услуги
+            </h2>
+            <ul class="popular-servises__list">
+              <li>Стрижка машинкой</li>
+              <li>Стрижка усов</li>
+              <li>Груминг</li>
+              <li>Комплексная стрижка</li>
+            </ul>
+            <button type="button" class="popular-servises__check-all-btn">
+              <p>Посмотреть все</p>
+              <img src="pictures/icons/arrow-right.svg" alt="" />
+            </button>
           </div>
-          <div class="contacts__block-2">
-            <h3 class="contacts__subtitle">Время работы</h3>
-            <p class="contacts__time-of-working">
-              пн—пт: с 10:00 до 22:00<br />сб—вс: с 10:00 до 19:00
+
+          <!-- Галерея -->
+          <div class="servises__gallery gallery">
+            <h2 class="gallery__title main-block-title">Фотогалерея</h2>
+            <div class="gallery__swiper swiper-container">
+              <div class="swiper-wrapper">
+                <!-- Слайды -->
+                <div class="swiper-slide">
+                  <img
+                    src="pictures/pictureOfWorking.jpg"
+                    alt=""
+                    class="gallery__img"
+                  />
+                </div>
+                <div class="swiper-slide">
+                  <img
+                    src="pictures/pictureOfWorking.jpg"
+                    alt=""
+                    class="gallery__img"
+                  />
+                </div>
+                <div class="swiper-slide">
+                  <img
+                    src="pictures/pictureOfWorking.jpg"
+                    alt=""
+                    class="gallery__img"
+                  />
+                </div>
+                <div class="swiper-slide">
+                  <img
+                    src="pictures/pictureOfWorking.jpg"
+                    alt=""
+                    class="gallery__img"
+                  />
+                </div>
+              </div>
+              <!-- Стрелки управления -->
+              <div class="swiper-button-prev my-prev"></div>
+              <div class="swiper-button-next"></div>
+              <!-- Пагинация -->
+              <div class="swiper-pagination my-pagination"></div>
+            </div>
+          </div>
+        </div>
+        <!-- Информация Блок №2 -->
+        <div class="main__information information">
+          <div class="information__contacts contacts">
+            <h2 class="contacts__title main-block-title">Контакты</h2>
+            <div class="contacts__block-1">
+              <h3 class="contacts__subtitle main-block-subtitle">
+                Барбершоп «Бородинский»
+              </h3>
+              <p class="contacts__info">
+                Санкт-Петербург, набережная реки Карповки, 5, литера П.
+              </p>
+              <h2 class="contacts__phone-number">+7 800 555-35-35</h2>
+            </div>
+            <div class="contacts__block-2">
+              <h3 class="contacts__subtitle">Время работы</h3>
+              <p class="contacts__time-of-working">
+                пн—пт: с 10:00 до 22:00<br />сб—вс: с 10:00 до 19:00
+              </p>
+              <button type="button" class="contacts__route">
+                Как проехать
+              </button>
+              <button type="button" class="contacts__feedback">
+                Обратная связь
+              </button>
+            </div>
+          </div>
+
+          <!-- Записаться Блок №2 -->
+          <div class="information__appointment appointment">
+            <h2 class="appointment__title main-block-title">Записаться</h2>
+            <p class="appointment__paragraph">
+              Укажите желаемую дату и время и мы свяжемся с вами для
+              подтверждения брони.
             </p>
-            <button type="button" class="contacts__route">Как проехать</button>
-            <button type="button" class="contacts__feedback">
-              Обратная связь
+            <form action="#" method="get" class="appointment__form full-form">
+              <div class="top-form">
+                <div class="full-form__date">
+                  <label class="full-form__label" for="date"
+                    ><p class="label__text">Дата</p>
+                    <img
+                      src="pictures/icons/info.svg"
+                      alt=""
+                      class="label__img"
+                  /></label>
+                  <input class="full-form__input" type="text" name="date" />
+                </div>
+                <div class="full-form__time">
+                  <label class="full-form__label" for="time"
+                    ><p class="label__text">Время</p>
+                    <img
+                      src="pictures/icons/info.svg"
+                      alt=""
+                      class="label__img"
+                  /></label>
+                  <input class="full-form__input" type="text" name="time" />
+                </div>
+                <div class="full-form__phone">
+                  <label class="full-form__label" for="phone"
+                    ><p class="label__text">Телефон</p></label
+                  >
+                  <input class="full-form__input" type="tel" name="phone" />
+                </div>
+              </div>
+              <div class="bottom-form">
+                <div class="full-form__name">
+                  <label class="full-form__label" for="name"
+                    ><p class="label__text">Ваше имя</p></label
+                  >
+                  <input class="full-form__input" type="text" name="name" />
+                </div>
+              </div>
+              <div class="full-form__subscribe-container">
+                <button class="full-form__subscribe" type="submit">
+                  Записаться
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </main>
+      <!-- Футер -->
+      <footer class="footer">
+        <div class="footer__info footer-left">
+          <img
+            src="pictures/icons/logo-short-dark.svg"
+            alt="BORODINSKI"
+            class="footer-left__short-logo"
+          />
+          <p class="footer-left__paragraph">
+            Санкт-Петербург, набережная<br />
+            реки Карповки, 5, литера П.
+          </p>
+          <h3 class="footer-left__phone">+7 800 555-86-28</h3>
+          <a href="" class="footer-left__link">Как нас найти?</a>
+        </div>
+        <div class="footer__offers footer-middle">
+          <h3 class="footer-middle__title footer-title">
+            Получайте лучшие предложения
+          </h3>
+          <div class="footer__form">
+            <input class="footer-middle__email-form" type="text" />
+            <button class="submit-email-btn">
+              <img src="pictures/icons/arrow-tail-right.svg" alt="" />
             </button>
           </div>
         </div>
-
-        <!-- Записаться Блок №2 -->
-        <div class="information__appointment appointment">
-          <h2 class="appointment__title main-block-title">Записаться</h2>
-          <p class="appointment__paragraph">
-            Укажите желаемую дату и время и мы свяжемся с вами для подтверждения
-            брони.
+        <div class="footer__social-media footer-right">
+          <h3 class="footer-right__title footer-title">Давайте дружить</h3>
+          <button class="footer-right__btn btn-sotial-media" type="button">
+            <p>Профиль gitHub</p>
+            <img src="pictures/icons/gitHub.png" alt="" width="auto%" />
+          </button>
+          <p class="footer-right__signature">
+            Created by: <span class="creator">Hollow_DS</span>
           </p>
-          <form action="#" method="get" class="appointment__form full-form">
-            <div class="top-form">
-              <div class="full-form__date">
-                <label class="full-form__label" for="date"
-                  ><p class="label__text">Дата</p>
-                  <img src="pictures/icons/info.svg" alt="" class="label__img"
-                /></label>
-                <input class="full-form__input" type="text" name="date" />
-              </div>
-              <div class="full-form__time">
-                <label class="full-form__label" for="time"
-                  ><p class="label__text">Время</p>
-                  <img src="pictures/icons/info.svg" alt="" class="label__img"
-                /></label>
-                <input class="full-form__input" type="text" name="time" />
-              </div>
-              <div class="full-form__phone">
-                <label class="full-form__label" for="phone"
-                  ><p class="label__text">Телефон</p></label
-                >
-                <input class="full-form__input" type="tel" name="phone" />
-              </div>
-            </div>
-            <div class="bottom-form">
-              <div class="full-form__name">
-                <label class="full-form__label" for="name"
-                  ><p class="label__text">Ваше имя</p></label
-                >
-                <input class="full-form__input" type="text" name="name" />
-              </div>
-            </div>
-            <div class="full-form__subscribe-container">
-              <button class="full-form__subscribe" type="submit">
-                Записаться
-              </button>
-            </div>
-          </form>
         </div>
-      </div>
-    </main>
-    <!-- Футер -->
-    <footer class="footer">
-      <div class="footer__info footer-left">
-        <img
-          src="pictures/icons/logo-short-dark.svg"
-          alt="BORODINSKI"
-          class="footer-left__short-logo"
-        />
-        <p class="footer-left__paragraph">
-          Санкт-Петербург, набережная<br />
-          реки Карповки, 5, литера П.
-        </p>
-        <h3 class="footer-left__phone">+7 800 555-86-28</h3>
-        <a href="" class="footer-left__link">Как нас найти?</a>
-      </div>
-      <div class="footer__offers footer-middle">
-        <h3 class="footer-middle__title footer-title">
-          Получайте лучшие предложения
-        </h3>
-        <div class="footer__form">
-          <input class="footer-middle__email-form" type="text" />
-          <button class="submit-email-btn">
-            <img src="pictures/icons/arrow-tail-right.svg" alt="" />
-          </button>
-        </div>
-      </div>
-      <div class="footer__social-media footer-right">
-        <h3 class="footer-right__title footer-title">Давайте дружить</h3>
-        <button class="footer-right__btn btn-sotial-media" type="button">
-          <p>Профиль gitHub</p>
-          <img src="pictures/icons/gitHub.png" alt="" width="auto%" />
-        </button>
-        <p class="footer-right__signature">
-          Created by: <span class="creator">Hollow_DS</span>
-        </p>
-      </div>
-    </footer>
-    <!-- Popup -->
-    <div id="popup" class="popup">
-      <div class="popup__body">
-        <div class="popup__content">
-          <a href="" class="popup__close"
-            ><img src="pictures/icons/cross.svg" alt=""
-          /></a>
-          <div class="popup__title">Личный кабинет</div>
-          <div class="popup__box-1">
-            <input class="popup__form-1" type="text" />
-            <input class="popup__form-2" type="text" />
-          </div>
-          <div class="popup__box-2">
-            <div class="popup__checkbox-container">
-              <input
-                type="checkbox"
-                name="popup-checkbox"
-                checked
-                class="checkbox"
-              /> <p class="checkbox-text">Запомнить меня</p>
+      </footer>
+      <!-- Popup -->
+      <div id="popup" class="popup">
+        <div class="popup__body">
+          <div class="popup__content">
+            <a href="#" class="popup__close close-popup"
+              ><img src="pictures/icons/cross.svg" alt=""
+            /></a>
+            <div class="popup__title">Личный кабинет</div>
+            <div class="popup__box-1">
+              <input class="popup__form-1" type="text" />
+              <input class="popup__form-2" type="text" />
             </div>
-            <a class="foggot-password" href="">Забыл пароль</a>
+            <div class="popup__box-2">
+              <div class="popup__checkbox-container checkbox">
+                <label class="check option">
+                  <input class="check__input" type="checkbox" checked /><span
+                    class="check__box"
+                  ></span
+                  >Запомнить меня
+                </label>
+              </div>
+              <a class="foggot-password" href="">Забыл пароль</a>
+            </div>
+            <button class="popup-btn-enter" type="submit">Войти</button>
+            <button class="popup-btn-registration" type="submit">
+              Регистрация
+            </button>
           </div>
-          <button class="popup-btn-enter" type="submit">Войти</button>
-          <button class="popup-btn-registration" type="submit">
-            Регистрация
-          </button>
         </div>
       </div>
     </div>
