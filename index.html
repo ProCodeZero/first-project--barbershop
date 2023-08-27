@@ -3,6 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link type="Image/x-icon" href="pictures/icons/fav-ico.ico" rel="icon">
+	
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -271,11 +273,20 @@
             <input class="popup__form-2" type="text" />
           </div>
           <div class="popup__box-2">
-            <input type="checkbox" name="Запомнить меня" class="remember-me" />
+            <div class="popup__checkbox-container">
+              <input
+                type="checkbox"
+                name="popup-checkbox"
+                checked
+                class="checkbox"
+              /> <p class="checkbox-text">Запомнить меня</p>
+            </div>
             <a class="foggot-password" href="">Забыл пароль</a>
           </div>
-          <button class="popup-btn-enter">Войти</button>
-          <button class="popup-btn-registration">Регистрация</button>
+          <button class="popup-btn-enter" type="submit">Войти</button>
+          <button class="popup-btn-registration" type="submit">
+            Регистрация
+          </button>
         </div>
       </div>
     </div>

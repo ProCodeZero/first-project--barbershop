@@ -1,53 +1,128 @@
+%popup-form {
+  border: 2px solid var(--basic-extra-dark, #242424);
+  width: 360px;
+  height: 44px;
+  color: var(--basic-neutral, #bdbdbd);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 150%; /* 24px */
+}
+
 .popup {
-	position: fixed;
-	width: 100%;
-	height: 100%;
-	background-color: rgba($color: black, $alpha: 0.8);
-	top: 0;
-	left: 0;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba($color: black, $alpha: 0.8);
+  top: 0;
+  left: 0;
 }
 .popup__body {
-	min-height: 100%;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	padding: 30px 10px;
+  min-height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 440px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 10px;
 }
 .popup__content {
-	background-color: white;
-	color: black;
-	max-width: 800px;
-	padding: 30px;
-	position: relative;
+  background-color: white;
+  color: black;
+  max-width: 800px;
+  padding: 30px;
+  position: relative;
 }
 .popup__close {
-position: absolute;
-right: 0;
-top: 0;
-padding: 15px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 15px;
 }
 .popup__title {
-	color: var(--basic-black, #000);
-	font-family: "PT Sans Narrow";
-	font-size: 32px;
-	font-style: normal;
-	font-weight: 700;
-	line-height: 110%; /* 35.2px */
-	text-transform: uppercase;
+  color: var(--basic-black, #000);
+  font-family: "PT Sans Narrow";
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 110%; /* 35.2px */
+  text-transform: uppercase;
+  margin-bottom: 24px;
 }
 .popup__box-1 {
+  margin-bottom: 16px;
 }
 .popup__form-1 {
+  @extend %popup-form;
+  margin-bottom: 16px;
 }
 .popup__form-2 {
+  @extend %popup-form;
 }
 .popup__box-2 {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 16px;
 }
-.remember-me {
+.popup__checkbox-container {
+  display: inherit;
+}
+.checkbox {
+  align-self: center;
+  display: inline-flex;
+  width: 20px;
+  height: 20px;
+  margin-right: 16px;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}
+.checkbox-text {
+  text-align: left;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 24px */
+  color: black;
 }
 .foggot-password {
+  color: var(--basic-black, #000);
+  text-align: right;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%; /* 22.4px */
+  text-decoration-line: underline;
 }
 .popup-btn-enter {
+  display: flex;
+  width: 360px;
+  background: var(--basic-black, #000);
+  padding: 14px 0px;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  text-align: center;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 100%; /* 16px */
+  text-transform: uppercase;
+  margin-bottom: 16px;
 }
 .popup-btn-registration {
+  display: flex;
+  width: 360px;
+  background: #fff;
+  padding: 14px 0px;
+  justify-content: center;
+  align-items: center;
+  color: var(--basic-extra-dark, #242424);
+  text-align: center;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 100%; /* 16px */
+  text-transform: uppercase;
 }
