@@ -1,0 +1,53 @@
+.popup {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background-color: rgba($color: black, $alpha: 0.8);
+	top: 0;
+	left: 0;
+}
+.popup__body {
+	min-height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 30px 10px;
+}
+.popup__content {
+	background-color: white;
+	color: black;
+	max-width: 800px;
+	padding: 30px;
+	position: relative;
+}
+.popup__close {
+position: absolute;
+right: 0;
+top: 0;
+padding: 15px;
+}
+.popup__title {
+	color: var(--basic-black, #000);
+	font-family: "PT Sans Narrow";
+	font-size: 32px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: 110%; /* 35.2px */
+	text-transform: uppercase;
+}
+.popup__box-1 {
+}
+.popup__form-1 {
+}
+.popup__form-2 {
+}
+.popup__box-2 {
+}
+.remember-me {
+}
+.foggot-password {
+}
+.popup-btn-enter {
+}
+.popup-btn-registration {
+}

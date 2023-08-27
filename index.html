@@ -140,7 +140,8 @@
               </div>
             </div>
             <!-- Стрелки управления -->
-            <div class="swiper-button-prev my-prev"> <img src="pictures/icons/arrow-left.svg" alt="">
+            <div class="swiper-button-prev my-prev">
+              <img src="pictures/icons/arrow-left.svg" alt="" />
             </div>
             <div class="swiper-button-next"></div>
             <!-- Пагинация -->
@@ -257,6 +258,27 @@
         </p>
       </div>
     </footer>
+    <!-- Popup -->
+    <div id="popup" class="popup">
+      <div class="popup__body">
+        <div class="popup__content">
+          <a href="" class="popup__close"
+            ><img src="pictures/icons/cross.svg" alt=""
+          /></a>
+          <div class="popup__title">Личный кабинет</div>
+          <div class="popup__box-1">
+            <input class="popup__form-1" type="text" />
+            <input class="popup__form-2" type="text" />
+          </div>
+          <div class="popup__box-2">
+            <input type="checkbox" name="Запомнить меня" class="remember-me" />
+            <a class="foggot-password" href="">Забыл пароль</a>
+          </div>
+          <button class="popup-btn-enter">Войти</button>
+          <button class="popup-btn-registration">Регистрация</button>
+        </div>
+      </div>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script src="js/script.js"></script>
   </body>
