@@ -4,12 +4,13 @@ $background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' w
   border: 2px solid var(--basic-extra-dark, #242424);
   width: 360px;
   height: 44px;
-  color: var(--basic-neutral, #bdbdbd);
+  color: var(--basic-neutral, #424242);
   font-size: 16px;
   font-style: normal;
   font-weight: 700;
   line-height: 150%; /* 24px */
 	z-index: 2;
+	padding: 10px 16px;
 }
 
 .popup {
