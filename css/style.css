@@ -78,42 +78,45 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .header {
-  background-color: black;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  background-color: black;
   font-weight: 700;
   line-height: 140%;
   padding: 0 40px;
-  align-items: center;
   width: 100%;
 }
-.header .header__group-2 {
+.header .header__groups {
+  display: flex;
+  justify-content: space-between;
+  width: 940px;
+}
+.header .header__groups .header__group-2 {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.header .header__group-2 .btn-enter {
+.header .header__groups .header__group-2 .btn-enter {
   background-image: url("../pictures/icons/login.svg");
   background-position-x: 20px;
   background-position-y: center;
   background-repeat: no-repeat;
   padding-left: 44px;
 }
-.header .header__group-2 .btn-find {
+.header .header__groups .header__group-2 .btn-find {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.header .header__group-2 .btn-basket {
+.header .header__groups .header__group-2 .btn-basket {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.header .header__btn {
+.header .header__groups .header__btn {
   background-color: black;
   padding: 24px 20px;
   color: #fff;
-  font-family: "PT Sans Narrow";
   font-size: 16px;
   font-style: normal;
   font-weight: 700;
@@ -132,11 +135,16 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .footer {
+  display: flex;
+  justify-content: center;
   padding: 40px;
   width: 100%;
   height: 242px;
   flex-shrink: 0;
   background: rgb(36, 36, 36);
+}
+.footer .footer__wrapper {
+  width: 940px;
   display: flex;
   justify-content: space-between;
 }
@@ -452,7 +460,7 @@ body.lock {
 .main .main__greeting {
   margin-left: auto;
   margin-right: auto;
-  width: 100%;
+  width: 940px;
   text-align: center;
 }
 .main .main__greeting .greeting__logo {
@@ -554,10 +562,6 @@ body.lock {
 .main .main__servises .servises__gallery .gallery__img {
   max-width: 390px;
   margin-bottom: 36px;
-}
-.main .main__servises .servises__gallery .swiper-button-prev {
-  background-color: #000;
-  text-align: center;
 }
 .main .main__information {
   margin-left: auto;

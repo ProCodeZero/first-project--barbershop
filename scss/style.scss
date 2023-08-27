@@ -21,7 +21,7 @@ body {
   background-color: #000;
 }
 body.lock {
-	overflow: hidden;
+  overflow: hidden;
 }
 
 .main {
@@ -48,7 +48,7 @@ body.lock {
   .main__greeting {
     margin-left: auto;
     margin-right: auto;
-    width: 100%;
+    width: 940px;
     text-align: center;
     .greeting__logo {
       grid-area: logo;
@@ -146,7 +146,7 @@ body.lock {
     .servises__gallery {
       display: inline;
       margin: 40px;
-			z-index: 0;
+      z-index: 0;
       .swiper-container {
         width: 400px;
         overflow: hidden;
@@ -161,15 +161,11 @@ body.lock {
         margin-bottom: 36px;
       }
       .swiper-button-prev {
-				background-color: #000;
-				text-align: center;
       }
       .swiper-button-next {
-        
       }
-      .my-pagination{
-
-			}
+      .my-pagination {
+      }
     }
   }
 

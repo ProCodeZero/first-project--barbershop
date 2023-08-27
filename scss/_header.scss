@@ -1,45 +1,47 @@
 .header {
-  background-color: black;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  background-color: black;
   font-weight: 700;
   line-height: 140%;
   padding: 0 40px;
-  align-items: center;
-	width: 100%;
+  width: 100%;
 
-  .header__group-2 {
+  .header__groups {
     display: flex;
-    justify-content: center;
-    align-items: center;
-
-    .btn-enter {
-      background-image: url("../pictures/icons/login.svg");
-      background-position-x: 20px;
-      background-position-y: center;
-      background-repeat: no-repeat;
-      padding-left: 44px;
-    }
-    .btn-find {
+    justify-content: space-between;
+    width: 940px;
+    .header__group-2 {
       display: flex;
       justify-content: center;
       align-items: center;
+      .btn-enter {
+        background-image: url("../pictures/icons/login.svg");
+        background-position-x: 20px;
+        background-position-y: center;
+        background-repeat: no-repeat;
+        padding-left: 44px;
+      }
+      .btn-find {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .btn-basket {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
     }
-    .btn-basket {
-      display: flex;
-      justify-content: center;
-      align-items: center;
+    .header__btn {
+      background-color: black;
+      padding: 24px 20px;
+      color: #fff;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 140%; /* 22.4px */
+      text-transform: uppercase;
     }
-  }
-  .header__btn {
-    background-color: black;
-    padding: 24px 20px;
-    color: #fff;
-    font-family: "PT Sans Narrow";
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 140%; /* 22.4px */
-    text-transform: uppercase;
   }
 }
