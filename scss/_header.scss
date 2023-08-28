@@ -67,6 +67,22 @@
           visibility: hidden;
           .popover__content {
             padding: 40px;
+            .close-popover {
+							cursor: pointer;
+              position: absolute;
+              top: 0;
+              right: 0;
+              padding: 24px 20px;
+              background-color: white;
+              .close-popover__btn {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+								p{
+									color: black;
+								}
+              }
+            }
           }
           .basket-popover__title {
             color: var(--basic-black, #000);
@@ -120,6 +136,7 @@
         .basket__popover.open {
           opacity: 1;
           visibility: visible;
+          z-index: 1;
         }
       }
     }

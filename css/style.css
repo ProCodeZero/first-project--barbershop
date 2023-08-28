@@ -151,6 +151,22 @@ h1, h2, h3, h4, h5, h6 {
 .header .header__groups .header__group-2 .header__basket .basket__popover .popover__content {
   padding: 40px;
 }
+.header .header__groups .header__group-2 .header__basket .basket__popover .popover__content .close-popover {
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 24px 20px;
+  background-color: white;
+}
+.header .header__groups .header__group-2 .header__basket .basket__popover .popover__content .close-popover .close-popover__btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header .header__groups .header__group-2 .header__basket .basket__popover .popover__content .close-popover .close-popover__btn p {
+  color: black;
+}
 .header .header__groups .header__group-2 .header__basket .basket__popover .basket-popover__title {
   color: var(--basic-black, #000);
   font-family: "PT Sans Narrow";
@@ -202,6 +218,7 @@ h1, h2, h3, h4, h5, h6 {
 .header .header__groups .header__group-2 .header__basket .basket__popover.open {
   opacity: 1;
   visibility: visible;
+  z-index: 1;
 }
 
 .footer-right .footer-right__title, .footer-middle .footer-middle__title {

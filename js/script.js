@@ -11,7 +11,7 @@ new Swiper(".gallery__swiper", {
 });
 
 // Popover
-const popoverLinks = document.querySelectorAll(".popover-link")
+const popoverLinks = document.querySelectorAll(".popover-link");
 
 // Popup
 const popupLinks = document.querySelectorAll(".popup-link");
@@ -21,6 +21,34 @@ const lockPadding = document.querySelectorAll("lock-padding");
 //
 let unlock = true;
 const timeout = 800;
+
+// Popup list of goods
+const btnsClose = document.querySelectorAll(".basket-popover__delete-btn");
+const goodsNumber = document.querySelectorAll(".basket__goods-number");
+let goodsList = document.querySelectorAll(".basket-popover__good-wrapper");
+
+if (goodsNumber.length > 0) {
+  for (let i = 0; i < goodsNumber.length; i++) {
+    const el = goodsNumber[i];
+    el.textContent = goodsList.length;
+  }
+}
+
+// Delete good element
+if (btnsClose.length > 0) {
+  for (let i = 0; i < btnsClose.length; i++) {
+    const el = btnsClose[i];
+    el.addEventListener("click", function (e) {
+      e.target.closest(".basket-popover__good-wrapper").remove();
+      goodsList = document.querySelectorAll(".basket-popover__good-wrapper");
+      for (let i = 0; i < goodsNumber.length; i++) {
+        const el = goodsNumber[i];
+        console.log("el :>> ", el);
+        el.textContent = goodsList.length;
+      }
+    });
+  }
+}
 
 // Popover code
 if (popoverLinks.length > 0) {
@@ -51,7 +79,7 @@ function popoverOpen(curentPopover) {
       popoverClose(popoverActive, false);
     }
     curentPopover.classList.add("open");
-    document.querySelector('main').addEventListener("click", function (e) {
+    document.querySelector("main").addEventListener("click", function (e) {
       if (!e.target.closest(".basket__popover")) {
         popoverClose(document.querySelector(".popover"));
       }
@@ -65,7 +93,6 @@ function popoverClose(popoverActive) {
   }
 }
 // End popover code
-
 
 // Popup code
 
@@ -162,4 +189,3 @@ document.addEventListener("keydown", function (e) {
   }
 });
 // End popup code
-

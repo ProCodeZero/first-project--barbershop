@@ -39,21 +39,44 @@
                 type="button"
                 class="header__btn btn-basket popover-link"
               >
-                <img src="pictures/icons/cart.svg" alt="КОРЗИНА" />
+                <img
+                  class="btn-basket__icon"
+                  src="pictures/icons/cart.svg"
+                  alt="КОРЗИНА"
+                />
                 <p class="basket__goods-number">0</p>
               </a>
               <div id="popover" class="basket__popover basket-popover popover">
                 <div class="popover__content">
+                  <div class="close-popover">
+                    <a type="button" class="close-popover__btn">
+                      <img src="pictures/icons/cart-black.svg" alt="" />
+                      <p class="basket__goods-number">0</p>
+                    </a>
+                  </div>
                   <h2 class="basket-popover__title">Корзина</h2>
-                  <div class="basket-popover__good-wrapper">
-                    <div class="basket-popover__good-info">
-                      <h3>Стрижка машинкой</h3>
-                      <p>800 ₽</p>
+                  <div class="basket-popover__list">
+                    <div class="basket-popover__good-wrapper">
+                      <div class="basket-popover__good-info">
+                        <h3>Стрижка машинкой</h3>
+                        <p>800 ₽</p>
+                      </div>
+                      <div class="basket-popover__delete-btn">
+                        <button type="button">
+                          <img src="pictures/icons/trash.svg" alt="" />
+                        </button>
+                      </div>
                     </div>
-                    <div class="basket-popover__delete-btn">
-                      <button type="button">
-                        <img src="pictures/icons/trash.svg" alt="" />
-                      </button>
+										<div class="basket-popover__good-wrapper">
+                      <div class="basket-popover__good-info">
+                        <h3>Стрижка усов</h3>
+                        <p>1200 ₽</p>
+                      </div>
+                      <div class="basket-popover__delete-btn">
+                        <button type="button">
+                          <img src="pictures/icons/trash.svg" alt="" />
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </div>
