@@ -31,10 +31,35 @@
           </div>
           <div class="header__group-2">
             <button type="button" class="header__btn btn-find">
-              <img src="pictures/icons/search.svg" alt="ПОИСК" /></button
-            ><button type="button" class="header__btn btn-basket">
-              <img src="pictures/icons/cart.svg" alt="КОРЗИНА" /></button
-            ><a
+              <img src="pictures/icons/search.svg" alt="ПОИСК" />
+            </button>
+            <div class="header__basket basket">
+              <a
+                href="#popover"
+                type="button"
+                class="header__btn btn-basket popover-link"
+              >
+                <img src="pictures/icons/cart.svg" alt="КОРЗИНА" />
+                <p class="basket__goods-number">0</p>
+              </a>
+              <div id="popover" class="basket__popover basket-popover popover">
+                <div class="popover__content">
+                  <h2 class="basket-popover__title">Корзина</h2>
+                  <div class="basket-popover__good-wrapper">
+                    <div class="basket-popover__good-info">
+                      <h3>Стрижка машинкой</h3>
+                      <p>800 ₽</p>
+                    </div>
+                    <div class="basket-popover__delete-btn">
+                      <button type="button">
+                        <img src="pictures/icons/trash.svg" alt="" />
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <a
               href="#popup"
               type="button"
               class="header__btn btn-enter popup-link"

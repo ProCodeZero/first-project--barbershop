@@ -286,9 +286,9 @@ body.lock {
         flex-shrink: 0;
       }
       .full-form__input {
-        font-size: 12px;
+        font-size: 15px;
         border: 2px solid var(--spcial-light, #dbb590);
-        color: #000;
+        color: var(--basic-neutral, #BDBDBD);
         padding: 10px 16px;
         width: 100%;
       }

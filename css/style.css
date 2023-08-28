@@ -91,6 +91,17 @@ h1, h2, h3, h4, h5, h6 {
   justify-content: space-between;
   width: 940px;
 }
+.header .header__groups .header__btn {
+  background-color: black;
+  font-family: "PT Sans Narrow";
+  padding: 24px 20px;
+  color: #fff;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 140%; /* 22.4px */
+  text-transform: uppercase;
+}
 .header .header__groups .header__group-2 {
   display: flex;
   justify-content: center;
@@ -108,20 +119,89 @@ h1, h2, h3, h4, h5, h6 {
   justify-content: center;
   align-items: center;
 }
-.header .header__groups .header__group-2 .btn-basket {
+.header .header__groups .header__group-2 .header__basket {
+  position: relative;
+}
+.header .header__groups .header__group-2 .header__basket .btn-basket {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.header .header__groups .header__btn {
-  background-color: black;
-  padding: 24px 20px;
+.header .header__groups .header__group-2 .header__basket .basket__goods-number {
   color: #fff;
+  font-family: "PT Sans Narrow";
   font-size: 16px;
   font-style: normal;
   font-weight: 700;
   line-height: 140%; /* 22.4px */
   text-transform: uppercase;
+  padding-left: 8px;
+}
+.header .header__groups .header__group-2 .header__basket .basket__popover {
+  position: absolute;
+  background-color: white;
+  right: 0px;
+  top: 0px;
+  width: 420px;
+  height: auto;
+  opacity: 0;
+  visibility: hidden;
+}
+.header .header__groups .header__group-2 .header__basket .basket__popover .popover__content {
+  padding: 40px;
+}
+.header .header__groups .header__group-2 .header__basket .basket__popover .basket-popover__title {
+  color: var(--basic-black, #000);
+  font-family: "PT Sans Narrow";
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 110%; /* 35.2px */
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+.header .header__groups .header__group-2 .header__basket .basket__popover .basket-popover__good-wrapper {
+  border-bottom: 2px dotted #bdbdbd;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+.header .header__groups .header__group-2 .header__basket .basket__popover .basket-popover__good-wrapper .basket-popover__good-info {
+  height: 76px;
+}
+.header .header__groups .header__group-2 .header__basket .basket__popover .basket-popover__good-wrapper .basket-popover__good-info h3 {
+  color: var(--basic-extra-dark, #242424);
+  font-family: "PT Sans Narrow";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 140%; /* 28px */
+  text-transform: uppercase;
+}
+.header .header__groups .header__group-2 .header__basket .basket__popover .basket-popover__good-wrapper .basket-popover__good-info p {
+  color: var(--special-neutral, #af7842);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 150%; /* 24px */
+}
+.header .header__groups .header__group-2 .header__basket .basket__popover .basket-popover__good-wrapper .basket-popover__delete-btn {
+  cursor: pointer;
+  height: 44px;
+  width: auto;
+  padding: 20px;
+  background-color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.header .header__groups .header__group-2 .header__basket .basket__popover .basket-popover__good-wrapper .basket-popover__delete-btn button {
+  background-color: #000;
+}
+.header .header__groups .header__group-2 .header__basket .basket__popover.open {
+  opacity: 1;
+  visibility: visible;
 }
 
 .footer-right .footer-right__title, .footer-middle .footer-middle__title {
@@ -673,9 +753,9 @@ body.lock {
   flex-shrink: 0;
 }
 .main .main__information .appointment__form .full-form__input {
-  font-size: 12px;
+  font-size: 15px;
   border: 2px solid var(--spcial-light, #dbb590);
-  color: #000;
+  color: var(--basic-neutral, #BDBDBD);
   padding: 10px 16px;
   width: 100%;
 }

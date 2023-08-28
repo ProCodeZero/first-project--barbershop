@@ -10,6 +10,9 @@ new Swiper(".gallery__swiper", {
   },
 });
 
+// Popover
+const popoverLinks = document.querySelectorAll(".popover-link")
+
 // Popup
 const popupLinks = document.querySelectorAll(".popup-link");
 const body = document.querySelector("body");
@@ -17,8 +20,54 @@ const body = document.querySelector("body");
 const lockPadding = document.querySelectorAll("lock-padding");
 //
 let unlock = true;
-
 const timeout = 800;
+
+// Popover code
+if (popoverLinks.length > 0) {
+  for (let index = 0; index < popoverLinks.length; index++) {
+    const popoverLink = popoverLinks[index];
+    popoverLink.addEventListener("click", function (e) {
+      const popoverName = popoverLink.getAttribute("href").replace("#", "");
+      const curentPopover = document.getElementById(popoverName);
+      popoverOpen(curentPopover);
+      e.preventDefault();
+    });
+  }
+}
+const popoverCloseIcon = document.querySelectorAll(".close-popover");
+if (popoverCloseIcon.length > 0) {
+  for (let i = 0; i < popoverCloseIcon.length; i++) {
+    const el = popoverCloseIcon[i];
+    el.addEventListener("click", function (e) {
+      popoverClose(el.closest(".popover"));
+      e.preventDefault();
+    });
+  }
+}
+function popoverOpen(curentPopover) {
+  if (curentPopover && unlock) {
+    const popoverActive = document.querySelector(".popover.open");
+    if (popoverActive) {
+      popoverClose(popoverActive, false);
+    }
+    curentPopover.classList.add("open");
+    document.querySelector('main').addEventListener("click", function (e) {
+      if (!e.target.closest(".basket__popover")) {
+        popoverClose(document.querySelector(".popover"));
+      }
+    });
+  }
+}
+
+function popoverClose(popoverActive) {
+  if (unlock) {
+    popoverActive.classList.remove("open");
+  }
+}
+// End popover code
+
+
+// Popup code
 
 if (popupLinks.length > 0) {
   for (let index = 0; index < popupLinks.length; index++) {
@@ -26,7 +75,6 @@ if (popupLinks.length > 0) {
     popupLink.addEventListener("click", function (e) {
       const popupName = popupLink.getAttribute("href").replace("#", "");
       const curentPopup = document.getElementById(popupName);
-      console.log("curentPopup :>> ", curentPopup);
       popupOpen(curentPopup);
       e.preventDefault();
     });
@@ -113,3 +161,5 @@ document.addEventListener("keydown", function (e) {
     popupClose(popupActive);
   }
 });
+// End popup code
+
