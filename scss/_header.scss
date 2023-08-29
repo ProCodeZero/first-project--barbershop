@@ -1,3 +1,9 @@
+%btnFocus {
+  height: 70px;
+  box-shadow: 0 0 0 4px #ffffff inset;
+  transition: all 0.2s;
+}
+
 .header {
   display: flex;
   justify-content: center;
@@ -11,7 +17,10 @@
     display: flex;
     justify-content: space-between;
     width: 940px;
+
     .header__btn {
+      position: relative;
+      box-sizing: border-box;
       background-color: black;
       font-family: "PT Sans Narrow";
       padding: 24px 20px;
@@ -21,6 +30,41 @@
       font-weight: 700;
       line-height: 140%; /* 22.4px */
       text-transform: uppercase;
+      transition: all 0.5s;
+    }
+    .header__btn:hover {
+      background: var(--basic-dark, #595959);
+      transition: all 0.5s;
+    }
+    .header__btn:active::after {
+      position: absolute;
+      content: " ";
+      background-color: white;
+      width: 75%;
+      height: 4px;
+      flex-shrink: 0;
+      bottom: 0;
+      left: 12.5%;
+      transition: all 0.5s;
+    }
+    .header__btn:focus {
+      @extend %btnFocus;
+    }
+    .header__group-1 {
+      display: flex;
+      justify-content: center;
+      display: flex;
+      margin: 0 -5px;
+      .header__btn {
+        .box {
+          display: flex;
+          margin: 0 -5px;
+        }
+        .item {
+          flex: 1 1 auto;
+          margin: 0 5px;
+        }
+      }
     }
     .header__group-2 {
       display: flex;

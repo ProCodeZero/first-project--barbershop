@@ -41,7 +41,6 @@ body.lock {
     width: 100%; /* Need a specific value to work */
     filter: grayscale(100%);
     z-index: -1;
-
   }
 
   // * Приветствие
@@ -139,6 +138,21 @@ body.lock {
         line-height: 100%; /* 16px */
         text-transform: uppercase;
         margin-top: 10px;
+        transition: all 0.2s;
+      }
+      .popular-servises__check-all-btn:hover {
+        background-color: #814b18;
+        transition: all 0.2s;
+      }
+      .popular-servises__check-all-btn:focus {
+        background-color: #814b18;
+        border: 2px solid #dbb590;
+        transition: all 0.2s;
+      }
+      .popular-servises__check-all-btn:disabled {
+        background-color: #595959;
+        color: rgba(231, 231, 231, 1);
+        transition: all 0.2s;
       }
     }
 
@@ -222,6 +236,10 @@ body.lock {
         text-decoration-line: underline;
         text-transform: uppercase;
       }
+      .contacts__phone-number {
+        cursor: pointer;
+        position: relative;
+      }
     }
     .contacts__block-2 {
       .contacts__time-of-working {
@@ -230,6 +248,11 @@ body.lock {
         font-style: normal;
         font-weight: 700;
         line-height: 150%; /* 24px */
+      }
+      .block-2__btns {
+        display: flex;
+        justify-content: space-between;
+        align-items: end;
       }
       .contacts__route {
         display: inline-flex;
@@ -248,10 +271,10 @@ body.lock {
         line-height: 100%; /* 16px */
         text-transform: uppercase;
       }
+
       .contacts__feedback {
         height: 44px;
         padding: 14px 20px;
-        margin-left: 16px;
         align-items: flex-start;
         gap: 8px;
         background-color: white;
@@ -262,6 +285,20 @@ body.lock {
         font-weight: 700;
         line-height: 100%; /* 16px */
         text-transform: uppercase;
+      }
+      .contacts__feedback:hover {
+        background-color: rgba(219, 181, 144, 1);
+        transition: all 0.2s;
+      }
+      .contacts__feedback:focus {
+        background-color: rgba(219, 181, 144, 1);
+        border: 2px solid rgba(175, 120, 66, 1);
+        transition: all 0.2s;
+      }
+      .contacts__feedback:disabled {
+        background-color: #595959;
+        color: rgba(231, 231, 231, 1);
+        transition: all 0.2s;
       }
     }
 
@@ -277,20 +314,41 @@ body.lock {
       line-height: 140%; /* 19.6px */
       padding-bottom: 24px;
     }
+
     .appointment__form {
       .full-form__label {
+        position: relative;
         display: flex;
         height: 22px;
         align-items: center;
         gap: 2px;
         flex-shrink: 0;
+        cursor: pointer;
       }
       .full-form__input {
         font-size: 15px;
-        border: 2px solid var(--spcial-light, #dbb590);
-        color: var(--basic-neutral, #BDBDBD);
-        padding: 10px 16px;
+        border: 2px solid var(--spcial-light, #000000);
+        color: var(--basic-neutral, #000000);
+        padding: 10px 10px;
         width: 100%;
+        text-align: center;
+        transition: all 0.5s;
+      }
+      .full-form__input:hover {
+        border: 2px solid var(--spcial-light, #dbb590);
+        transition: all 0.2s;
+      }
+      .full-form__input:focus {
+        border: 2px solid var(--special-light, #dbb590);
+        transition: all 0.2s;
+      }
+      .full-form__input.error {
+        border: 2px solid var(--status-error, #ea5454);
+        transition: all 0.2s;
+      }
+      .full-form__input.error:hover {
+        border: 2px solid var(--special-light, #dbb590);
+        transition: all 0.2s;
       }
       .label__text {
         color: var(--basic-extra-dark, #242424);
@@ -299,6 +357,42 @@ body.lock {
         font-weight: 700;
         line-height: 140%; /* 22.4px */
         text-transform: uppercase;
+        cursor: text;
+      }
+      .label__img-div {
+        position: relative;
+        cursor: pointer;
+        height: 16px;
+        width: 16px;
+        background-image: url(/pictures/icons/info.svg);
+      }
+      .label__img-div:hover {
+        background-image: url(/pictures/icons/info-hover.svg);
+      }
+      .label__img-div::after {
+        position: absolute;
+        content: "Укажите желаемую дату и время и мы свяжемся с вами для подтверждения брони";
+        display: none;
+        width: 0;
+        height: 0;
+      }
+      .label__img-div:hover::after {
+        padding: 5px;
+        border: 8px solid black;
+        border-radius: 8px;
+        text-transform: none;
+        content: "Укажите желаемую дату и время и мы свяжемся с вами для подтверждения брони";
+        width: 220px;
+        height: auto;
+        background-color: #000;
+        color: var(--basic-white, #fff);
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 120%; /* 16.8px */
+        display: block;
+        left: 0;
+        top: -80px;
       }
       .top-form {
         width: 100%;
@@ -326,7 +420,6 @@ body.lock {
         @extend %formElem;
         width: 390px;
       }
-
       .full-form__subscribe {
         display: inline-flex;
         height: 44px;
@@ -344,6 +437,23 @@ body.lock {
         line-height: 100%; /* 16px */
         text-transform: uppercase;
       }
+    }
+    .main-btn-type-1 {
+      transition: all 0.2s;
+    }
+    .main-btn-type-1:hover {
+      background-color: #814b18;
+      transition: all 0.2s;
+    }
+    .main-btn-type-1:focus {
+      background-color: #814b18;
+      border: 2px solid #dbb590;
+      transition: all 0.2s;
+    }
+    .main-btn-type-1:disabled {
+      background-color: #595959;
+      color: rgba(231, 231, 231, 1);
+      transition: all 0.2s;
     }
   }
 }

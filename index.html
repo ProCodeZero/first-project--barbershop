@@ -67,7 +67,7 @@
                         </button>
                       </div>
                     </div>
-										<div class="basket-popover__good-wrapper">
+                    <div class="basket-popover__good-wrapper">
                       <div class="basket-popover__good-info">
                         <h3>Стрижка усов</h3>
                         <p>1200 ₽</p>
@@ -160,7 +160,10 @@
               <li>Груминг</li>
               <li>Комплексная стрижка</li>
             </ul>
-            <button type="button" class="popular-servises__check-all-btn">
+            <button
+              type="button"
+              class="popular-servises__check-all-btn main-btn-type-1"
+            >
               <p>Посмотреть все</p>
               <img src="pictures/icons/arrow-right.svg" alt="" />
             </button>
@@ -227,12 +230,14 @@
               <p class="contacts__time-of-working">
                 пн—пт: с 10:00 до 22:00<br />сб—вс: с 10:00 до 19:00
               </p>
-              <button type="button" class="contacts__route">
-                Как проехать
-              </button>
-              <button type="button" class="contacts__feedback">
-                Обратная связь
-              </button>
+              <div class="block-2__btns">
+                <button type="button" class="contacts__route main-btn-type-1">
+                  Как проехать
+                </button>
+                <button type="button" class="contacts__feedback">
+                  Обратная связь
+                </button>
+              </div>
             </div>
           </div>
 
@@ -248,28 +253,37 @@
                 <div class="full-form__date">
                   <label class="full-form__label" for="date"
                     ><p class="label__text">Дата</p>
-                    <img
-                      src="pictures/icons/info.svg"
-                      alt=""
-                      class="label__img"
-                  /></label>
-                  <input class="full-form__input" type="text" name="date" />
+                    <div class="label__img-div"></div
+                  ></label>
+                  <input
+                    class="full-form__input"
+                    type="text"
+                    name="date"
+                    placeholder="01.01.2023"
+                  />
                 </div>
                 <div class="full-form__time">
                   <label class="full-form__label" for="time"
                     ><p class="label__text">Время</p>
-                    <img
-                      src="pictures/icons/info.svg"
-                      alt=""
-                      class="label__img"
-                  /></label>
-                  <input class="full-form__input" type="text" name="time" />
+                    <div class="label__img-div"></div
+                  ></label>
+                  <input
+                    class="full-form__input"
+                    type="text"
+                    name="time"
+                    placeholder="12:00"
+                  />
                 </div>
                 <div class="full-form__phone">
                   <label class="full-form__label" for="phone"
                     ><p class="label__text">Телефон</p></label
                   >
-                  <input class="full-form__input" type="tel" name="phone" />
+                  <input
+                    class="full-form__input"
+                    type="tel"
+                    name="phone"
+                    placeholder="+7 (999) 999-99-99"
+                  />
                 </div>
               </div>
               <div class="bottom-form">
@@ -277,11 +291,19 @@
                   <label class="full-form__label" for="name"
                     ><p class="label__text">Ваше имя</p></label
                   >
-                  <input class="full-form__input" type="text" name="name" />
+                  <input
+                    class="full-form__input"
+                    type="text"
+                    name="name"
+                    placeholder="Введите ваше имя..."
+                  />
                 </div>
               </div>
               <div class="full-form__subscribe-container">
-                <button class="full-form__subscribe" type="submit">
+                <button
+                  class="full-form__subscribe main-btn-type-1"
+                  type="submit"
+                >
                   Записаться
                 </button>
               </div>
@@ -310,7 +332,11 @@
               Получайте лучшие предложения
             </h3>
             <div class="footer__form">
-              <input class="footer-middle__email-form" type="text" />
+              <input
+                class="footer-middle__email-form"
+                type="text"
+                placeholder="Введите ваш email"
+              />
               <button class="submit-email-btn">
                 <img src="pictures/icons/arrow-tail-right.svg" alt="" />
               </button>
