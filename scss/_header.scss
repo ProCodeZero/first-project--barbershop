@@ -12,180 +12,181 @@
   line-height: 140%;
   padding: 0 40px;
   width: 100%;
-
-  .header__groups {
+}
+.header__groups {
+  display: flex;
+  justify-content: space-between;
+  width: 940px;
+}
+.btn-main {
+	margin-right: 100px;
+}
+.header__btn {
+  position: relative;
+  box-sizing: border-box;
+  background-color: black;
+  font-family: "PT Sans Narrow";
+  padding: 24px 20px;
+  color: #fff;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 140%; /* 22.4px */
+  text-transform: uppercase;
+  transition: all 0.5s;
+}
+.header__btn:hover {
+  background: var(--basic-dark, #595959);
+  transition: all 0.5s;
+}
+.header__btn:active::after {
+  position: absolute;
+  content: " ";
+  background-color: white;
+  width: 75%;
+  height: 4px;
+  flex-shrink: 0;
+  bottom: 0;
+  left: 12.5%;
+  transition: all 0.5s;
+}
+.header__btn:focus {
+  @extend %btnFocus;
+}
+.header__navigation {
+  display: flex;
+  justify-content: center;
+  display: flex;
+  margin: 0 -5px;
+  .header__btn {
+    .box {
+      display: flex;
+      margin: 0 -5px;
+    }
+    .item {
+      flex: 1 1 auto;
+      margin: 0 5px;
+    }
+  }
+}
+.header__group-2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .btn-enter {
+    background-image: url("../pictures/icons/login.svg");
+    background-position-x: 20px;
+    background-position-y: center;
+    background-repeat: no-repeat;
+    padding-left: 44px;
+  }
+  .btn-find {
     display: flex;
-    justify-content: space-between;
-    width: 940px;
-
-    .header__btn {
+    justify-content: center;
+    align-items: center;
+  }
+  .header__basket {
+    position: relative;
+    .btn-basket {
       position: relative;
-      box-sizing: border-box;
-      background-color: black;
-      font-family: "PT Sans Narrow";
-      padding: 24px 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .basket__goods-number {
       color: #fff;
+      font-family: "PT Sans Narrow";
       font-size: 16px;
       font-style: normal;
       font-weight: 700;
       line-height: 140%; /* 22.4px */
       text-transform: uppercase;
-      transition: all 0.5s;
+      padding-left: 8px;
     }
-    .header__btn:hover {
-      background: var(--basic-dark, #595959);
-      transition: all 0.5s;
-    }
-    .header__btn:active::after {
+    .basket__popover {
       position: absolute;
-      content: " ";
-      background-color: white;
-      width: 75%;
-      height: 4px;
-      flex-shrink: 0;
-      bottom: 0;
-      left: 12.5%;
-      transition: all 0.5s;
-    }
-    .header__btn:focus {
-      @extend %btnFocus;
-    }
-    .header__navigation {
-      display: flex;
-      justify-content: center;
-      display: flex;
-      margin: 0 -5px;
-      .header__btn {
-        .box {
-          display: flex;
-          margin: 0 -5px;
-        }
-        .item {
-          flex: 1 1 auto;
-          margin: 0 5px;
-        }
-      }
-    }
-    .header__group-2 {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      .btn-enter {
-        background-image: url("../pictures/icons/login.svg");
-        background-position-x: 20px;
-        background-position-y: center;
-        background-repeat: no-repeat;
-        padding-left: 44px;
-      }
-      .btn-find {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-      .header__basket {
-        position: relative;
-        .btn-basket {
-          position: relative;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-        .basket__goods-number {
-          color: #fff;
-          font-family: "PT Sans Narrow";
-          font-size: 16px;
-          font-style: normal;
-          font-weight: 700;
-          line-height: 140%; /* 22.4px */
-          text-transform: uppercase;
-          padding-left: 8px;
-        }
-        .basket__popover {
-          position: absolute;
-          background-color: rgba($color: white, $alpha: 1);
-          right: 0px;
-          top: 0px;
-          width: 420px;
-          height: auto;
-          opacity: 0;
-          visibility: hidden;
-          transition: all 0.3s ease 0s;
-					z-index: 1;
-          .popover__content {
-            padding: 40px;
+      background-color: rgba($color: white, $alpha: 1);
+      right: 0px;
+      top: 0px;
+      width: 420px;
+      height: auto;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease 0s;
+      z-index: 1;
+      .popover__content {
+        padding: 40px;
 
-            .close-popover {
-              cursor: pointer;
-              position: absolute;
-              top: 0;
-              right: 0;
-              padding: 24px 20px;
-              background-color: white;
-              .close-popover__btn {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                p {
-                  color: black;
-                }
-              }
+        .close-popover {
+          cursor: pointer;
+          position: absolute;
+          top: 0;
+          right: 0;
+          padding: 24px 20px;
+          background-color: white;
+          .close-popover__btn {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            p {
+              color: black;
             }
           }
-          .basket-popover__title {
-            color: var(--basic-black, #000);
+        }
+      }
+      .basket-popover__title {
+        color: var(--basic-black, #000);
+        font-family: "PT Sans Narrow";
+        font-size: 32px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 110%; /* 35.2px */
+        text-transform: uppercase;
+        margin-bottom: 24px;
+      }
+      .basket-popover__good-wrapper {
+        border-bottom: 2px dotted #bdbdbd;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 24px;
+        .basket-popover__good-info {
+          height: 76px;
+          h3 {
+            color: var(--basic-extra-dark, #242424);
             font-family: "PT Sans Narrow";
-            font-size: 32px;
+            font-size: 20px;
             font-style: normal;
             font-weight: 700;
-            line-height: 110%; /* 35.2px */
+            line-height: 140%; /* 28px */
             text-transform: uppercase;
-            margin-bottom: 24px;
           }
-          .basket-popover__good-wrapper {
-            border-bottom: 2px dotted #bdbdbd;
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 24px;
-            .basket-popover__good-info {
-              height: 76px;
-              h3 {
-                color: var(--basic-extra-dark, #242424);
-                font-family: "PT Sans Narrow";
-                font-size: 20px;
-                font-style: normal;
-                font-weight: 700;
-                line-height: 140%; /* 28px */
-                text-transform: uppercase;
-              }
-              p {
-                color: var(--special-neutral, #af7842);
-                font-size: 16px;
-                font-style: normal;
-                font-weight: 700;
-                line-height: 150%; /* 24px */
-              }
-            }
-            .basket-popover__delete-btn {
-              cursor: pointer;
-              height: 44px;
-              width: auto;
-              padding: 20px;
-              background-color: #000;
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              button {
-                background-color: #000;
-              }
-            }
+          p {
+            color: var(--special-neutral, #af7842);
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 150%; /* 24px */
           }
         }
-        .basket__popover.open {
-          opacity: 1;
-          visibility: visible;
-          z-index: 1;
+        .basket-popover__delete-btn {
+          cursor: pointer;
+          height: 44px;
+          width: auto;
+          padding: 20px;
+          background-color: #000;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          button {
+            background-color: #000;
+          }
         }
       }
+    }
+    .basket__popover.open {
+      opacity: 1;
+      visibility: visible;
+      z-index: 1;
     }
   }
 }
