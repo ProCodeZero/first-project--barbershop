@@ -16,6 +16,11 @@
   align-items: flex-start;
   gap: 8px;
 }
+%cardVector {
+  position: absolute;
+  background-image: url(/pictures/icons/vector.svg);
+  bottom: 57%;
+}
 
 body {
   background-color: #000;
@@ -111,16 +116,50 @@ body.lock {
     // * Услуги Блок_1.1
     .servises__popular-servises {
       margin: 40px;
-      .popular-servises__list li {
-        color: black;
-        color: var(--basic-extra-dark, #242424);
-        font-family: "PT Sans Narrow";
-        font-size: 20px;
-        font-style: normal;
-        font-weight: 700;
-        line-height: 140%; /* 28px */
-        text-transform: uppercase;
+
+      .list__card {
+        display: flex;
+        justify-content: space-between;
         padding-bottom: 22px;
+        position: relative;
+
+        p {
+          color: black;
+          display: block;
+          font-family: "PT Sans Narrow";
+          font-size: 20px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: 140%; /* 28px */
+          text-transform: uppercase;
+        }
+        .card__price {
+          color: #af7842;
+        }
+        .vector-1 {
+          @extend %cardVector;
+          left: 177px;
+          height: 2px;
+          width: 165px;
+        }
+        .vector-2 {
+          @extend %cardVector;
+          left: 124px;
+          height: 2px;
+          width: 210px;
+        }
+        .vector-3 {
+          @extend %cardVector;
+          left: 78px;
+          height: 2px;
+          width: 262px;
+        }
+        .vector-4 {
+          @extend %cardVector;
+          left: 200px;
+          height: 2px;
+          width: 130px;
+        }
       }
       .popular-servises__check-all-btn {
         display: flex;
@@ -235,10 +274,6 @@ body.lock {
         line-height: 120%; /* 28.8px */
         text-decoration-line: underline;
         text-transform: uppercase;
-      }
-      .contacts__phone-number {
-        cursor: pointer;
-        position: relative;
       }
     }
     .contacts__block-2 {

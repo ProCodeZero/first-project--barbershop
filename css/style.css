@@ -574,6 +574,12 @@ h1, h2, h3, h4, h5, h6 {
   gap: 8px;
 }
 
+.main .main__servises .servises__popular-servises .list__card .vector-4, .main .main__servises .servises__popular-servises .list__card .vector-3, .main .main__servises .servises__popular-servises .list__card .vector-2, .main .main__servises .servises__popular-servises .list__card .vector-1 {
+  position: absolute;
+  background-image: url(/pictures/icons/vector.svg);
+  bottom: 57%;
+}
+
 body {
   background-color: #000;
 }
@@ -659,16 +665,44 @@ body.lock {
 .main .main__servises .servises__popular-servises {
   margin: 40px;
 }
-.main .main__servises .servises__popular-servises .popular-servises__list li {
+.main .main__servises .servises__popular-servises .list__card {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 22px;
+  position: relative;
+}
+.main .main__servises .servises__popular-servises .list__card p {
   color: black;
-  color: var(--basic-extra-dark, #242424);
+  display: block;
   font-family: "PT Sans Narrow";
   font-size: 20px;
   font-style: normal;
   font-weight: 700;
   line-height: 140%; /* 28px */
   text-transform: uppercase;
-  padding-bottom: 22px;
+}
+.main .main__servises .servises__popular-servises .list__card .card__price {
+  color: #af7842;
+}
+.main .main__servises .servises__popular-servises .list__card .vector-1 {
+  left: 177px;
+  height: 2px;
+  width: 165px;
+}
+.main .main__servises .servises__popular-servises .list__card .vector-2 {
+  left: 124px;
+  height: 2px;
+  width: 210px;
+}
+.main .main__servises .servises__popular-servises .list__card .vector-3 {
+  left: 78px;
+  height: 2px;
+  width: 262px;
+}
+.main .main__servises .servises__popular-servises .list__card .vector-4 {
+  left: 200px;
+  height: 2px;
+  width: 130px;
 }
 .main .main__servises .servises__popular-servises .popular-servises__check-all-btn {
   display: flex;
@@ -767,10 +801,6 @@ body.lock {
   line-height: 120%; /* 28.8px */
   text-decoration-line: underline;
   text-transform: uppercase;
-}
-.main .main__information .contacts__block-1 .contacts__phone-number {
-  cursor: pointer;
-  position: relative;
 }
 .main .main__information .contacts__block-2 .contacts__time-of-working {
   color: var(--basic-extra-dark, #242424);
