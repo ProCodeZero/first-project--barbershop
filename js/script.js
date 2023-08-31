@@ -22,9 +22,15 @@ const lockPadding = document.querySelectorAll("lock-padding");
 let unlock = true;
 const timeout = 800;
 
+// Shop price slider
+const rangeInput = document.querySelectorAll(".range-input input"),
+  progress = document.querySelector(".price-setting__slider .progress");
+let priceGap = 200;
+
 // Popup list of goods
-const btnsClose = document.querySelectorAll(".basket-popover__delete-btn");
-const goodsNumber = document.querySelectorAll(".basket__goods-number");
+const btnsClose = document.querySelectorAll(".basket-popover__delete-btn"),
+  goodsNumber = document.querySelectorAll(".basket__goods-number"),
+  priceShow = document.querySelectorAll(".price-setting__watch .show-value");
 let goodsList = document.querySelectorAll(".basket-popover__good-wrapper");
 
 if (goodsNumber.length > 0) {
@@ -189,3 +195,25 @@ document.addEventListener("keydown", function (e) {
   }
 });
 // End popup code
+
+// Shop price slider
+console.log('priceShow[0] :>> ', priceShow[0]);
+rangeInput.forEach((input) => {
+  input.addEventListener("input", (e) => {
+    // * getting two ranges value and parsing them to number
+    let minVal = parseInt(rangeInput[0].value),
+      maxVal = parseInt(rangeInput[1].value);
+    if (maxVal - minVal < priceGap) {
+      if (e.target.className === "range-min") {
+        rangeInput[0].value = maxVal - priceGap;
+      } else {
+        rangeInput[1].value = minVal + priceGap;
+      }
+    } else {
+      priceShow[0].textContent = minVal;
+      priceShow[1].textContent = maxVal;
+      progress.style.left = (minVal / rangeInput[0].max) * 100 + "%";
+      progress.style.right = 100 - (maxVal / rangeInput[1].max) * 100 + "%";
+    }
+  });
+});

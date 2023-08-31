@@ -1,4 +1,4 @@
-$background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16' fill='none'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M8.00008 9.41421L11.543 12.9571L12.9572 11.5429L9.41429 8L12.9572 4.45711L11.543 3.04289L8.00008 6.58579L4.45718 3.04289L3.04297 4.45711L6.58586 8L3.04297 11.5429L4.45718 12.9571L8.00008 9.41421Z' fill='%23242424'/%3E%3C/svg%3E");
+$background-checkbox: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16' fill='none'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M8.00008 9.41421L11.543 12.9571L12.9572 11.5429L9.41429 8L12.9572 4.45711L11.543 3.04289L8.00008 6.58579L4.45718 3.04289L3.04297 4.45711L6.58586 8L3.04297 11.5429L4.45718 12.9571L8.00008 9.41421Z' fill='%23242424'/%3E%3C/svg%3E");
 
 %popup-form {
   border: 2px solid var(--basic-extra-dark, #242424);
@@ -9,32 +9,31 @@ $background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' w
   font-style: normal;
   font-weight: 700;
   line-height: 150%; /* 24px */
-	padding: 10px 16px;
+  padding: 10px 16px;
 }
 
 .popup {
-	z-index: 2;
+  z-index: 2;
   position: fixed;
   width: 100%;
   height: 100%;
   background-color: rgba($color: black, $alpha: 0.8);
   top: 0;
   left: 0;
-	opacity: 0;
-	visibility: hidden;
-	overflow-y: auto;
-	overflow-x: hidden;
-	transition: all 0.8s ease 0s;
-
+  opacity: 0;
+  visibility: hidden;
+  overflow-y: auto;
+  overflow-x: hidden;
+  transition: all 0.8s ease 0s;
 }
-.popup.open{
-	opacity: 1;
-	visibility: visible;
-	transition: all 0.8s ease 0s;
+.popup.open {
+  opacity: 1;
+  visibility: visible;
+  transition: all 0.8s ease 0s;
 }
 .popup.open .popup__content {
-	transform: perspective(600px) translate(0px, 0%) rotate(0deg);
-	opacity: 1;
+  transform: perspective(600px) translate(0px, 0%) rotate(0deg);
+  opacity: 1;
 }
 
 .popup__body {
@@ -46,7 +45,7 @@ $background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' w
   align-items: center;
   justify-content: center;
   padding: 30px 10px;
-	transition: all 0.8s ease 0s;
+  transition: all 0.8s ease 0s;
 }
 .popup__content {
   background-color: white;
@@ -54,9 +53,9 @@ $background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' w
   max-width: 800px;
   padding: 30px;
   position: relative;
-	transition: all 0.8s ease 0s;
-	opacity: 0;
-	transform: perspective(600px) translate(0px, -100%) rotate(10deg);
+  transition: all 0.8s ease 0s;
+  opacity: 0;
+  transform: perspective(600px) translate(0px, -100%) rotate(10deg);
 }
 .popup__close {
   position: absolute;
@@ -92,6 +91,7 @@ $background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' w
 }
 
 .check {
+  cursor: pointer;
   color: black;
   padding-left: 36px;
   position: relative;
@@ -106,31 +106,42 @@ $background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' w
   position: absolute;
   width: 20px;
   height: 20px;
-  border: 2px solid var(--basic-extra-dark, #242424);
+  border: 2px solid #242424;
+
 }
 // Checked
 .check__input:checked + .check__box {
-  background-image: $background;
+  background-image: $background-checkbox;
+	background-repeat: no-repeat;
+}
+// Hovered
+.check:hover .check__box {
+  border: 2px solid #af7842;
 }
 //  Focused
 .check__input:focus + .check__box {
-  border: 2px solid var(--special-neutral, #af7842);
+  border: 2px solid #af7842;
 }
 .check__input:checked:focus + .check__box {
-  background-image: $background;
-  border: 2px solid var(--special-neutral, #af7842);
+  // background-image: $background-checkbox;
+	// background-repeat: no-repeat;
+  border: 2px solid #af7842;
+	background: $background-checkbox no-repeat center;
 }
 //  Disabled
 .check__input:disabled + .check__box {
-  border: 2px solid var(--special-neutral, #ffffff);
+  border: 2px solid #ffffff;
 }
 .check__input:checked:disabled + .check__box {
-  background-image: $background;
-  border: 2px solid var(--special-neutral, #ffffff);
+  background-image: $background-checkbox;
+	
+	background-position: center;
+	background-repeat: no-repeat;
+  border: 2px solid #ffffff;
 }
 
 .foggot-password {
-  color: var(--basic-black, #000);
+  color: #000;
   text-align: right;
   font-size: 16px;
   font-style: normal;
@@ -141,7 +152,7 @@ $background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' w
 .popup-btn-enter {
   display: flex;
   width: 360px;
-  background: var(--basic-black, #000);
+  background: #000;
   padding: 14px 0px;
   justify-content: center;
   align-items: center;

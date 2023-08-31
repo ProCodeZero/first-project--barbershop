@@ -22,22 +22,19 @@
       <header class="header header-shop">
         <div class="header__groups">
           <nav class="header__navigation">
-						<a href="#" class="header__btn btn-main"><img src="pictures/icons/logo-short-dark.svg" alt=""></a>
+            <a href="index.html" class="header__btn btn-main"
+              ><img src="pictures/icons/logo-short-dark.svg" alt=""
+            /></a>
             <a href="#" class="header__btn btn-us">О нас</a>
-						<a href="#" class="header__btn btn-catalog">
-              Каталог</a>
-						<a href="#" class="header__btn btn-questions">
-              Частые вопросы</a>
+            <a href="#" class="header__btn btn-catalog"> Каталог</a>
+            <a href="#" class="header__btn btn-questions"> Частые вопросы</a>
           </nav>
           <div class="header__group-2">
             <a href="#" class="header__btn btn-find">
               <img src="pictures/icons/search.svg" alt="ПОИСК" />
             </a>
             <div class="header__basket basket">
-              <a
-                href="#popover"
-                class="header__btn btn-basket popover-link"
-              >
+              <a href="#popover" class="header__btn btn-basket popover-link">
                 <img
                   class="btn-basket__icon"
                   src="pictures/icons/cart.svg"
@@ -90,248 +87,122 @@
           </div>
         </div>
       </header>
-      <main class="main">
-        <div class="main__background-container">
-          <img
-            src="pictures/backgroundjpg.jpg"
-            alt=""
-            class="main__background"
-          />
-        </div>
-        <!-- Приветствие Блок №1 -->
-        <div class="main__greeting greeting">
-          <div class="greeting__logo">
-            <img
-              src="pictures/icons/logo-full-dark.svg"
-              alt="Logo"
-              class="logo-img"
-            />
-          </div>
-          <div class="greeting__labels">
-            <div class="greeting__text-block-1 label-block">
-              <h2 class="block-1__title label-title">Быстро</h2>
-              <img
+      <main class="main main--shop">
+        <div class="main-wrapper">
+          <div class="main-breadcrumbs">
+            <h2 class="main-breadcrumbs__title">Каталог</h2>
+            <p class="main-breadcrumbs__pass breadcrumbs-pass">
+              <a class="main-breadcrumbs__link" href="index.html">Главная</a
+              ><img
+                class="main-breadcrumbs__img"
                 src="pictures/icons/bullet.svg"
-                alt="*"
-                class="block-1__img label-img"
-              />
-              <p class="block-1__paragraph label-paragraph">
-                Мы делаем свою работу быстро! Два часа пролетят незаметно, и вы
-                — счастливый обладатель стильной стрижки-минутки!
-              </p>
-            </div>
-            <div class="greeting__text-block-2 label-block">
-              <h2 class="block-2__title label-title">Круто</h2>
-              <img
-                src="pictures/icons/bullet.svg"
-                alt="*"
-                class="block-2__img label-img"
-              />
-              <p class="block-2__paragraph label-paragraph">
-                Забудьте, как вы стриглись раньше.<br />Мы сделаем из вас звезду
-                футбола или кино!<br />Во всяком случае внешне.
-              </p>
-            </div>
-            <div class="greeting__text-block-3 label-block">
-              <h2 class="block-3__title label-title">Дорого</h2>
-              <img
-                src="pictures/icons/bullet.svg"
-                alt="*"
-                class="block-3__img label-img"
-              />
-              <p class="block-2__paragraph label-paragraph">
-                Наши мастера — профессионалы своего дела и не могут стоить
-                дешево. к тому же, разве цена не даёт определённый статус?
-              </p>
-            </div>
-          </div>
-        </div>
-        <!-- Услуги Блок №2 -->
-        <div class="main__servises servises">
-          <!-- Популярные услуги -->
-          <div class="servises__popular-servises popular-servises">
-            <h2 class="popular-servises__title main-block-title">
-              Популярные услуги
-            </h2>
-            <ul class="popular-servises__list list">
-              <li>
-                <div class="list__card card">
-                  <p class="card__name">Стрижка машинкой</p>
-									<p class="card__price">800 ₽</p>
-									<div class="card__vector vector-1">
-                </div>
-              </li>
-							<li>
-                <div class="list__card card">
-                  <p class="card__name">Стрижка усов</p>
-									<p class="card__price">1200 ₽</p>
-									<div class="card__vector vector-2">
-                </div>
-              </li>
-							<li>
-                <div class="list__card card">
-                  <p class="card__name">Груминг</p>
-									<p class="card__price">400 ₽</p>
-									<div class="card__vector vector-3">
-                </div>
-              </li>
-							<li>
-                <div class="list__card card">
-                  <p class="card__name">Комплексная стрижка</p>
-									<p class="card__price">2300 ₽</p>
-									<div class="card__vector vector-4">
-                </div>
-              </li>
-
-            </ul>
-            <button
-              type="button"
-              class="popular-servises__check-all-btn main-btn-type-1"
-            >
-              <p>Посмотреть все</p>
-              <img src="pictures/icons/arrow-right.svg" alt="" />
-            </button>
-          </div>
-
-          <!-- Галерея -->
-          <div class="servises__gallery gallery">
-            <h2 class="gallery__title main-block-title">Фотогалерея</h2>
-            <div class="gallery__swiper swiper-container" tabindex="-1">
-              <div class="swiper-wrapper">
-                <!-- Слайды -->
-                <div class="swiper-slide">
-                  <img
-                    src="pictures/pictureOfWorking.jpg"
-                    alt=""
-                    class="gallery__img"
-                  />
-                </div>
-                <div class="swiper-slide">
-                  <img
-                    src="pictures/pictureOfWorking_2.jpg"
-                    alt=""
-                    class="gallery__img"
-                  />
-                </div>
-                <div class="swiper-slide">
-                  <img
-                    src="pictures/pictureOfWorking_4.jpeg"
-                    alt=""
-                    class="gallery__img"
-                  />
-                </div>
-                <div class="swiper-slide">
-                  <img
-                    src="pictures/pictureOfWorking_3.jpg"
-                    alt=""
-                    class="gallery__img"
-                  />
-                </div>
-              </div>
-              <!-- Стрелки управления -->
-              <div class="swiper-button-prev my-prev"></div>
-              <div class="swiper-button-next"></div>
-              <!-- Пагинация -->
-              <div class="swiper-pagination my-pagination"></div>
-            </div>
-          </div>
-        </div>
-        <!-- Информация Блок №2 -->
-        <div class="main__information information">
-          <div class="information__contacts contacts">
-            <h2 class="contacts__title main-block-title">Контакты</h2>
-            <div class="contacts__block-1">
-              <h3 class="contacts__subtitle main-block-subtitle">
-                Барбершоп «Бородинский»
-              </h3>
-              <p class="contacts__info">
-                Санкт-Петербург, набережная реки Карповки, 5, литера П.
-              </p>
-              <h2 class="contacts__phone-number">+7 800 555-35-35</h2>
-            </div>
-            <div class="contacts__block-2">
-              <h3 class="contacts__subtitle">Время работы</h3>
-              <p class="contacts__time-of-working">
-                пн—пт: с 10:00 до 22:00<br />сб—вс: с 10:00 до 19:00
-              </p>
-              <div class="block-2__btns">
-                <button type="button" class="contacts__route main-btn-type-1">
-                  Как проехать
-                </button>
-                <button type="button" class="contacts__feedback">
-                  Обратная связь
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <!-- Записаться Блок №2 -->
-          <div class="information__appointment appointment">
-            <h2 class="appointment__title main-block-title">Записаться</h2>
-            <p class="appointment__paragraph">
-              Укажите желаемую дату и время и мы свяжемся с вами для
-              подтверждения брони.
+                alt=""
+              />Каталог
             </p>
-            <form action="#" method="get" class="appointment__form full-form">
-              <div class="top-form">
-                <div class="full-form__date">
-                  <label class="full-form__label" for="date"
-                    ><p class="label__text">Дата</p>
-                    <div class="label__img-div"></div
-                  ></label>
-                  <input
-                    class="full-form__input"
-                    type="text"
-                    name="date"
-                    placeholder="01.01.2023"
-                  />
+          </div>
+
+          <div class="main__catalog catalog">
+            <div class="catalog__wrapper">
+              <aside class="catalog__settings settings">
+                <div class="settings__price price-setting">
+                  <h3 class="settings__subtitle">Цена</h3>
+                  <div class="price-setting__slider">
+                    <div class="progress"></div>
+                  </div>
+									<div class="range-input">
+										<input type="range" class="range-min" min="0" max="2000" value="300">
+										<input type="range" class="range-max" min="0" max="2000" value="1700">
+									</div>
+                  <p class="price-setting__watch">
+                    от <span class="show-value">300</span> ₽ до
+                    <span class="show-value">1700</span> ₽
+                  </p>
                 </div>
-                <div class="full-form__time">
-                  <label class="full-form__label" for="time"
-                    ><p class="label__text">Время</p>
-                    <div class="label__img-div"></div
-                  ></label>
-                  <input
-                    class="full-form__input"
-                    type="text"
-                    name="time"
-                    placeholder="12:00"
-                  />
-                </div>
-                <div class="full-form__phone">
-                  <label class="full-form__label" for="phone"
-                    ><p class="label__text">Телефон</p></label
-                  >
-                  <input
-                    class="full-form__input"
-                    type="tel"
-                    name="phone"
-                    placeholder="+7 (999) 999-99-99"
-                  />
-                </div>
-              </div>
-              <div class="bottom-form">
-                <div class="full-form__name">
-                  <label class="full-form__label" for="name"
-                    ><p class="label__text">Ваше имя</p></label
-                  >
-                  <input
-                    class="full-form__input"
-                    type="text"
-                    name="name"
-                    placeholder="Введите ваше имя..."
-                  />
-                </div>
-              </div>
-              <div class="full-form__subscribe-container">
-                <button
-                  class="full-form__subscribe main-btn-type-1"
-                  type="submit"
-                >
-                  Записаться
-                </button>
-              </div>
-            </form>
+								<div class="settings__manufacturers manufacturers-setting">
+									<h3 class="settings__subtitle">Производители</h3>
+									<ul class="manufacturers-setting__list">
+										<li class="manufacturers-setting__item">
+											<label class="check option">
+												<input type="checkbox" class="check__input" checked>
+												<span class="check__box">
+												</span>
+											</input><p class="check__text">Bed Head for Men</p>
+										</label>
+									</li>
+										<li class="manufacturers-setting__item">
+											<label class="check option">
+												<input type="checkbox" class="check__input" checked>
+												<span class="check__box">
+												</span>
+											</input><p class="check__text">Homme Deep Cleansing Cool</p>
+										</label>
+									</li>
+										<li class="manufacturers-setting__item">
+											<label class="check option">
+												<input type="checkbox" class="check__input" checked>
+												<span class="check__box">
+												</span>
+											</input><p class="check__text">So Intense</p>
+										</label>
+									</li>
+										<li class="manufacturers-setting__item">
+											<label class="check option">
+												<input type="checkbox" class="check__input" checked>
+												<span class="check__box">
+												</span>
+											</input><p class="check__text">Sprekenhus</p>
+										</label>
+									</li>
+										<li class="manufacturers-setting__item">
+											<label class="check option">
+												<input type="checkbox" class="check__input" checked>
+												<span class="check__box">
+												</span>
+											</input><p class="check__text">Firm Storе</p>
+										</label>
+									</li>
+										<li class="manufacturers-setting__item">
+											<label class="check option">
+												<input type="checkbox" class="check__input" checked>
+												<span class="check__box">
+												</span>
+											</input><p class="check__text">Winter Body</p>
+										</label>
+									</li>
+									</ul>
+								</div>
+								<div class="setting__groups groups-setting">
+									<h3 class="settings__subtitle">Группы товаров</h3>
+									<ul class="groups-setting__list">
+										<li class="groups-setting__item">
+											<label class="radio">
+												<input type="radio" name="radio-1" class="radio__input" >
+												<span class="radio__box">
+												</span>
+											</input><p class="radio__text">Бритвенные принадлежности</p>
+											</label>
+										</li>
+										<li class="groups-setting__item">
+											<label class="radio">
+												<input type="radio" name="radio-1" class="radio__input" >
+												<span class="radio__box">
+												</span>
+											</input><p class="radio__text">Средства для ухода</p>
+											</label>
+										</li>
+										<li class="groups-setting__item">
+											<label class="radio">
+												<input type="radio" name="radio-1" class="radio__input" >
+												<span class="radio__box">
+												</span>
+											</input><p class="radio__text">Аксессуары</p>
+											</label>
+										</li>
+									</ul>
+								</label></li></ul>
+								</div>
+              </aside>
+            </div>
           </div>
         </div>
       </main>
