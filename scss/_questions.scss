@@ -1,11 +1,104 @@
+%message-text {
+  color: #242424;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 150%; /* 24px */
+  border: 2px solid #000;
+  border-radius: 25px;
+}
+%avatar {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+}
+%title-subtitle-text {
+  font-family: "PT Sans Narrow";
+  font-style: normal;
+  font-weight: 700;
+  line-height: 110%; /* 35.2px */
+  text-transform: uppercase;
+}
+
 .main--questions {
-  background: rgba(129, 75, 24, 1);
+  background: rgb(122, 67, 11);
 }
 .main-wrapper--questions {
   background: rgb(248, 248, 248);
-  box-shadow: 8px 8px 8px 0px rgba(79, 70, 60, 0.16),
-	-8px -8px 8px 0px rgba(79, 70, 60, 0.16);
-  padding: 40px 16px 40px;
+  box-shadow: 10px 10px 15px 8px rgba(255, 255, 255, 0.2),
+    -10px -10px 15px 8px rgba(255, 255, 255, 0.2);
+  padding: 50px;
   margin: 25px auto;
   width: 940px;
+}
+.main__head{
+	display: flex;
+}
+.main__title {
+  @extend %title-subtitle-text;
+  font-size: 32px;
+  color: black;
+  margin-bottom: 20px;
+	margin-right: 20px;
+}
+
+.item {
+  width: 100%;
+  height: 350px;
+  position: relative;
+  text-align: center;
+  border: 2px solid #000;
+  border-radius: 15px;
+  margin-top: 20px;
+  background-color: #fff7ef;
+}
+.item:hover {
+  border: 2px solid rgba(219, 181, 144, 1);
+}
+
+.item__title {
+  @extend %title-subtitle-text;
+  padding-top: 15px;
+  font-size: 24px;
+  color: black;
+}
+.item__question {
+  @extend %message-text;
+  position: absolute;
+  top: 60px;
+  left: 50px;
+  background-color: rgba(175, 120, 66, 0.7);
+  width: 30%;
+  height: auto;
+  text-align: left;
+  padding: 10px;
+}
+.item__answer {
+  @extend %message-text;
+  right: 50px;
+  bottom: 50px;
+  position: absolute;
+  color: black;
+  background-color: rgba(219, 181, 144, 0.7);
+  width: 50%;
+  height: auto;
+  text-align: left;
+  padding: 10px;
+}
+.main--questions__avatar-customer {
+  @extend %avatar;
+  bottom: -40px;
+  left: -40px;
+}
+.main--questions__avatar-assistant {
+  @extend %avatar;
+  border: 3px solid #000;
+  border-radius: 50%;
+  bottom: -40px;
+  right: -40px;
+}
+.main--questions__avatar-assistant img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
