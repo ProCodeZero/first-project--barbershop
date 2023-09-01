@@ -1,0 +1,51 @@
+.main--about-us {
+  background: rgba(175, 120, 66, 1);
+}
+.main-wrapper--about-us {
+  background: rgb(248, 248, 248);
+  box-shadow: 8px 8px 16px 5px rgba(46, 42, 37, 0.16),
+	-8px -8px 8px 0px rgba(79, 70, 60, 0.16);
+  padding: 40px 16px 40px;
+  margin: 25px auto;
+  width: 940px;
+}
+.main--about-us__logo {
+  text-align: center;
+  margin-top: 40px;
+}
+.main--about-us__title {
+  color: black;
+  margin-bottom: 20px;
+  font-family: "PT Sans Narrow";
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 110%; /* 35.2px */
+  text-transform: uppercase;
+}
+.title-sub-logo {
+  vertical-align: text-bottom;
+  margin-left: 20px;
+}
+.main--about-us__story-text {
+  color: black;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 24px */
+}
+.text-first-letter {
+  color: rgba(175, 120, 66, 1);
+  font-size: 20px;
+  font-weight: 00;
+}
+
+.main--about-us__story-text .span-bullet {
+  position: relative;
+  padding-left: 20px;
+}
+.span-bullet img {
+  position: absolute;
+  left: 0;
+  top: 0;
+}

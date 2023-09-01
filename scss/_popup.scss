@@ -1,15 +1,16 @@
 $background-checkbox: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16' fill='none'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M8.00008 9.41421L11.543 12.9571L12.9572 11.5429L9.41429 8L12.9572 4.45711L11.543 3.04289L8.00008 6.58579L4.45718 3.04289L3.04297 4.45711L6.58586 8L3.04297 11.5429L4.45718 12.9571L8.00008 9.41421Z' fill='%23242424'/%3E%3C/svg%3E");
 
 %popup-form {
-  border: 2px solid var(--basic-extra-dark, #242424);
+  border: 2px solid #242424;
   width: 360px;
   height: 44px;
-  color: var(--basic-neutral, #424242);
+  color: #424242;
   font-size: 16px;
   font-style: normal;
   font-weight: 700;
   line-height: 150%; /* 24px */
   padding: 10px 16px;
+	transition: all 0.2s;
 }
 
 .popup {
@@ -82,6 +83,37 @@ $background-checkbox: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/20
 }
 .popup__form-2 {
   @extend %popup-form;
+}
+.full-form__input:hover {
+	border: 2px solid rgba(175, 120, 66, 1);
+	transition: all 0.2s;
+}
+.full-form__input:focus {
+	border: 2px solid rgba(175, 120, 66, 1);
+	box-shadow: 0px 0px 0px 2px rgba(219, 181, 144, 1);
+	transition: all 0.2s;
+}
+.full-form__input:disabled {
+	background-color: rgba(231, 231, 231, 1);
+	border: 2px solid rgba(89, 89, 89, 1);
+	transition: all 0.2s;
+}
+.full-form__input:disabled:hover {
+	background-color: rgba(231, 231, 231, 1);
+	border: 2px solid rgba(89, 89, 89, 1);
+}
+.full-form__input.error {
+	border: 2px solid var(--status-error, #ea5454);
+	transition: all 0.2s;
+}
+.full-form__input.error:focus {
+	border: 2px solid var(--status-error, #ea5454);
+	transition: all 0.2s;
+	box-shadow: 0px 0px 0px 2px rgba(219, 181, 144, 1);
+}
+.full-form__input.error:hover {
+	border: 2px solid var(--special-light, #dbb590);
+	transition: all 0.2s;
 }
 .popup__box-2 {
   display: flex;

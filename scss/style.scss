@@ -196,13 +196,16 @@ body.lock {
       }
       .popular-servises__check-all-btn:focus {
         background-color: #814b18;
-        border: 2px solid #dbb590;
+        box-shadow: 0px 0px 0px 2px #dbb590;
         transition: all 0.2s;
       }
       .popular-servises__check-all-btn:disabled {
         background-color: #595959;
         color: rgba(231, 231, 231, 1);
         transition: all 0.2s;
+      }
+			.popular-servises__check-all-btn:disabled:hover {
+        background-color: #595959;
       }
     }
 
@@ -331,21 +334,24 @@ body.lock {
         font-weight: 700;
         line-height: 100%; /* 16px */
         text-transform: uppercase;
+				transition: all 0.2s;
       }
-      .contacts__feedback:hover {
-        background-color: rgba(219, 181, 144, 1);
-        transition: all 0.2s;
-      }
-      .contacts__feedback:focus {
-        background-color: rgba(219, 181, 144, 1);
-        border: 2px solid rgba(175, 120, 66, 1);
-        transition: all 0.2s;
-      }
-      .contacts__feedback:disabled {
-        background-color: #595959;
-        color: rgba(231, 231, 231, 1);
-        transition: all 0.2s;
-      }
+			.contacts__feedback:disabled {
+				background-color: rgba(89, 89, 89, 1);
+				transition: all 0.2s;
+			}
+			.contacts__feedback:disabled:hover {
+				background-color: rgba(89, 89, 89, 1);
+			}
+			.contacts__feedback:hover {
+				background-color: rgba(219, 181, 144, 1);
+				transition: all 0.2s;
+			}
+			.contacts__feedback:focus {
+				background-color: rgba(219, 181, 144, 1);
+				transition: all 0.2s;
+				box-shadow: 0px 0px 0px 2px rgba(129, 75, 24, 1) ;
+			}
     }
 
     // * Записаться Блок_2.2
@@ -381,21 +387,37 @@ body.lock {
         transition: all 0.5s;
       }
       .full-form__input:hover {
-        border: 2px solid var(--spcial-light, #dbb590);
+        border: 2px solid rgba(175, 120, 66, 1);
         transition: all 0.2s;
       }
       .full-form__input:focus {
-        border: 2px solid var(--special-light, #dbb590);
+        border: 2px solid rgba(175, 120, 66, 1);
+				box-shadow: 0px 0px 0px 2px rgba(219, 181, 144, 1);
         transition: all 0.2s;
+      }
+			.full-form__input:disabled {
+				background-color: rgba(231, 231, 231, 1);
+        border: 2px solid rgba(89, 89, 89, 1);
+        transition: all 0.2s;
+      }
+			.full-form__input:disabled:hover {
+				background-color: rgba(231, 231, 231, 1);
+        border: 2px solid rgba(89, 89, 89, 1);
       }
       .full-form__input.error {
         border: 2px solid var(--status-error, #ea5454);
         transition: all 0.2s;
       }
+			.full-form__input.error:focus {
+        border: 2px solid var(--status-error, #ea5454);
+        transition: all 0.2s;
+				box-shadow: 0px 0px 0px 2px rgba(219, 181, 144, 1);
+      }
       .full-form__input.error:hover {
         border: 2px solid var(--special-light, #dbb590);
         transition: all 0.2s;
       }
+			
       .label__text {
         color: var(--basic-extra-dark, #242424);
         font-size: 16px;
@@ -487,21 +509,25 @@ body.lock {
     .main-btn-type-1 {
       transition: all 0.2s;
     }
+    .main-btn-type-1:disabled {
+      background-color: rgba(89, 89, 89, 1);
+      transition: all 0.2s;
+    }
+    .main-btn-type-1:disabled:hover {
+      background-color: rgba(89, 89, 89, 1);
+    }
     .main-btn-type-1:hover {
-      background-color: #814b18;
+      background-color: rgba(129, 75, 24, 1);
       transition: all 0.2s;
     }
     .main-btn-type-1:focus {
-      background-color: #814b18;
-      border: 2px solid #dbb590;
+      background-color: rgba(129, 75, 24, 1);
       transition: all 0.2s;
-    }
-    .main-btn-type-1:disabled {
-      background-color: #595959;
-      color: rgba(231, 231, 231, 1);
-      transition: all 0.2s;
+      box-shadow: 0px 0px 0px 2px rgba(219, 181, 144, 1);
     }
   }
 }
 
 @import "_shop";
+@import "_about-us";
+@import "_questions";
