@@ -1,3 +1,3 @@
-# Final_quest
+# Borodinski
 
-https://procodezero.github.io/Final_quest/
+https://procodezero.github.io/Borodinski/
