@@ -8,7 +8,7 @@
   <p align="center">
     A stylish and feature-rich website template for barbershops and hair salons
     <br />
-    <a href="https://procodezero.github.io/Borodinski/"><strong>View Demo »</strong></a>
+    <a href="https://procodezero.github.io/first-project--barbershop/"><strong>View Demo »</strong></a>
     <br />
     <br />
     <a href="https://github.com/ProCodeZero/Borodinski/issues">Report Bug</a>
