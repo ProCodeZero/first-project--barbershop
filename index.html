@@ -386,8 +386,17 @@
             /></a>
             <div class="popup__title">Личный кабинет</div>
             <div class="popup__box-1">
-              <input class="popup__form-1 full-form__input" type="text" />
-              <input class="popup__form-2 full-form__input" type="password" />
+              <input 
+                class="popup__form-1 full-form__input" 
+                type="text" 
+                placeholder="Введите email"
+                onblur="validateEmailInput(this)" 
+              />
+              <input 
+                class="popup__form-2 full-form__input" 
+                type="password" 
+                placeholder="Введите пароль"
+              />
             </div>
             <div class="popup__box-2">
               <div class="popup__checkbox-container checkbox">
@@ -410,5 +419,18 @@
     </div>
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script src="js/script.js"></script>
+    <script src="js/utils.js"></script>
+    <script>
+function validateEmailInput(input) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(input.value)) {
+        input.style.borderColor = '#ff3434';
+        input.title = 'Неверный формат email';
+    } else {
+        input.style.borderColor = '#242424';
+        input.title = '';
+    }
+}
+</script>
   </body>
 </html>
