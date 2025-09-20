@@ -1,8 +1,11 @@
 <?php
 include 'includes/auth_check.php';
 
-$action = $_GET['action'] ?? '';
-$user_id = $_GET['id'] ?? 0;
+// Replace ?? with isset() for PHP 5.x compatibility
+$action = isset($_GET['action']) ? $_GET['action'] : '';
+$user_id = isset($_GET['id']) ? (int)$_GET['id'] : 0;
+
+$message = null; // Initialize message
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delete_user'])) {
     $user_id = (int)$_POST['user_id'];
@@ -11,11 +14,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delete_user'])) {
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
         $stmt = $pdo->prepare("DELETE FROM users WHERE id = ?");
-        $stmt->execute([$user_id]);
+        $stmt->execute(array($user_id));
 
-        $message = ['type' => 'success', 'text' => 'User deleted successfully.'];
+        $message = array('type' => 'success', 'text' => 'User deleted successfully.');
     } catch (PDOException $e) {
-        $message = ['type' => 'error', 'text' => 'Error deleting user: ' . $e->getMessage()];
+        $message = array('type' => 'error', 'text' => 'Error deleting user: ' . $e->getMessage());
     }
 }
 
@@ -27,17 +30,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['toggle_admin'])) {
 
         // First, get current status
         $stmt = $pdo->prepare("SELECT is_admin FROM users WHERE id = ?");
-        $stmt->execute([$user_id]);
+        $stmt->execute(array($user_id));
         $current_status = $stmt->fetchColumn();
 
         // Toggle it
         $new_status = $current_status ? 0 : 1;
         $stmt = $pdo->prepare("UPDATE users SET is_admin = ? WHERE id = ?");
-        $stmt->execute([$new_status, $user_id]);
+        $stmt->execute(array($new_status, $user_id));
 
-        $message = ['type' => 'success', 'text' => 'User admin status updated.'];
+        $message = array('type' => 'success', 'text' => 'User admin status updated.');
     } catch (PDOException $e) {
-        $message = ['type' => 'error', 'text' => 'Error updating user: ' . $e->getMessage()];
+        $message = array('type' => 'error', 'text' => 'Error updating user: ' . $e->getMessage());
     }
 }
 
@@ -47,8 +50,8 @@ try {
     $stmt = $pdo->query("SELECT id, email, is_admin, created_at FROM users ORDER BY created_at DESC");
     $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
 } catch (PDOException $e) {
-    $users = [];
-    $message = ['type' => 'error', 'text' => 'Could not fetch users.'];
+    $users = array();
+    $message = array('type' => 'error', 'text' => 'Could not fetch users.');
 }
 ?>
 <!DOCTYPE html>
