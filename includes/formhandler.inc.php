@@ -28,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $plainPassword = trim((string) $password);
 
             // Insert new user
-            $insertQuery = 'INSERT INTO users (email, password) VALUES (:email, :plainPassword)';
+            $insertQuery = 'INSERT INTO users (email, password, is_admin) VALUES (:email, :plainPassword, 0)';
             $insertStmt = $pdo->prepare($insertQuery);
             $insertStmt->execute(array(
                 ':email' => $email,

@@ -72,6 +72,11 @@ $visitorStats->trackVisit($current_page);
                         </div>
                     </div>
                     <a href="#popup" type="button" class="header__btn btn-enter popup-link">Login</a>
+                    <?php if (isset($_SESSION['is_admin']) && $_SESSION['is_admin'] === true): ?>
+                    <a href="admin/" class="header__btn btn-admin" style="background-color: #cc5500;">
+                        Admin
+                    </a>
+                    <?php endif; ?>
                 </div>
             </div>
         </header>

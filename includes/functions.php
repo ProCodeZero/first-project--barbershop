@@ -6,6 +6,12 @@ if (session_id() == '') {
     session_start();
 }
 
+// Include database connection
+require_once 'dbh.inc.php';
+
+// Ensure UTF-8 encoding for database results
+$pdo->exec("SET NAMES utf8mb4");
+
 // Form validation functions
 function validateEmail($email) {
     return filter_var($email, FILTER_VALIDATE_EMAIL) !== false;
@@ -72,57 +78,49 @@ function getCartTotal() {
     return $total;
 }
 
-// Services data
+// Fetch services from database
 function getServices() {
-    return array(
-        array(
-            'id' => 1,
-            'name' => 'Machine Haircut',
-            'price' => 800
-        ),
-        array(
-            'id' => 2,
-            'name' => 'Mustache Trim',
-            'price' => 1200
-        ),
-        array(
-            'id' => 3,
-            'name' => 'Grooming',
-            'price' => 400
-        ),
-        array(
-            'id' => 4,
-            'name' => 'Complete Haircut',
-            'price' => 2300
-        )
-    );
+    global $pdo;
+    
+    try {
+        $stmt = $pdo->prepare("SELECT id, name, price FROM services ORDER BY id ASC");
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    } catch (PDOException $e) {
+        error_log("Database error in getServices: " . $e->getMessage());
+        return array();
+    }
 }
 
-// Products data
+// Fetch products from database
 function getProducts() {
-    return array(
-        array(
-            'id' => 1,
-            'name' => 'Brews Daily Men Shampoo',
-            'price' => 744,
-            'image' => 'pictures/card1.png'
-        ),
-        array(
-            'id' => 2,
-            'name' => 'Syoss Men Power & Strength Shampoo',
-            'price' => 160,
-            'image' => 'pictures/card2.png'
-        ),
-        array(
-            'id' => 3,
-            'name' => 'Schauma "Strength and Volume with Hops"',
-            'price' => 94,
-            'image' => 'pictures/card3.png'
-        )
-    );
+    global $pdo;
+    
+    try {
+        $stmt = $pdo->prepare("SELECT id, name, price, image FROM products ORDER BY id ASC");
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    } catch (PDOException $e) {
+        error_log("Database error in getProducts: " . $e->getMessage());
+        return array();
+    }
 }
 
-// Gallery images
+// Fetch FAQ from database
+function getFAQ() {
+    global $pdo;
+    
+    try {
+        $stmt = $pdo->prepare("SELECT question, answer FROM faq ORDER BY sort_order ASC, id ASC");
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    } catch (PDOException $e) {
+        error_log("Database error in getFAQ: " . $e->getMessage());
+        return array();
+    }
+}
+
+// Gallery images (static)
 function getGalleryImages() {
     return array(
         'pictures/pictureOfWorking.jpg',
@@ -132,53 +130,7 @@ function getGalleryImages() {
     );
 }
 
-// FAQ data
-function getFAQ() {
-    return array(
-        array(
-            'question' => 'How often should I get my hair cut?',
-            'answer' => 'This depends on your hair type and desired style. Generally, it is recommended to get a haircut every 4-6 weeks to maintain the desired look.'
-        ),
-        array(
-            'question' => 'What hairstyles are popular now?',
-            'answer' => 'Popular hairstyles change over time, but currently in fashion are styles like fades, undercuts, pompadours, and textured cuts. Our barbers are always up to date with the latest trends and can suggest options based on your preferences.'
-        ),
-        array(
-            'question' => 'How to care for hair between haircuts?',
-            'answer' => 'Regularly use shampoo and condition your hair, avoid excessive heat styling. Use quality hair products suitable for your hair type, and apply a moisturizing hair mask once a week.'
-        ),
-        array(
-            'question' => 'How to choose a haircut based on face shape?',
-            'answer' => 'Different face shapes suit different hairstyles. Our barbers know how to assess face shape and can recommend styles that will highlight your features. Don\'t hesitate to ask for advice during your visit.'
-        ),
-        array(
-            'question' => 'I have thinning or balding hair. What options do I have?',
-            'answer' => 'Our barbers have experience dealing with hair loss and can suggest suitable hairstyles or care methods that will help solve your problems. They can also recommend hair care products that promote hair growth.'
-        ),
-        array(
-            'question' => 'Can you recommend hair products for my specific hair type?',
-            'answer' => 'Absolutely! Our barbers are well-informed about various hair products and can suggest the best products for your specific hair type, whether it\'s dry, oily, curly, or straight.'
-        ),
-        array(
-            'question' => 'What\'s the difference between a fade and a taper?',
-            'answer' => 'A fade refers to a gradual transition from short to long hair, usually with fading on the sides and back to the crown. On the other hand, a taper involves gradually shortening hair towards the neckline.'
-        ),
-        array(
-            'question' => 'How long does it take to get a haircut?',
-            'answer' => 'The duration of a haircut varies depending on the complexity of the hairstyle and specific client requirements. On average, a haircut takes about 30 minutes, but it can be shorter or longer depending on circumstances.'
-        ),
-        array(
-            'question' => 'Can I bring a photo of a hairstyle I like?',
-            'answer' => 'Absolutely! If you bring a photo of your desired hairstyle, it will help communicate your preferences to the barber. They will work with you to achieve a similar look that will suit your unique features.'
-        ),
-        array(
-            'question' => 'How do I maintain my beard?',
-            'answer' => 'Regularly wash and care for your beard, and use beard oil or balm to keep it moisturized and soft. Trimming and shaping your beard is also crucial for maintaining its neat appearance. Our barbers can give beard care advice and recommend beard care products.'
-        )
-    );
-}
-
-// Process form submissions
+// Process appointment form
 function processAppointmentForm() {
     if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['appointment'])) {
         $name = isset($_POST['name']) ? trim($_POST['name']) : '';
@@ -205,7 +157,19 @@ function processAppointmentForm() {
         }
         
         if (empty($errors)) {
-            // Here you would typically save to database or send email
+            // Save to database (optional enhancement)
+            try {
+                global $pdo;
+                $stmt = $pdo->prepare("
+                    INSERT INTO appointments (name, phone, date, time, created_at) 
+                    VALUES (?, ?, ?, ?, NOW())
+                ");
+                $stmt->execute(array($name, $phone, $date, $time));
+            } catch (PDOException $e) {
+                error_log("Failed to save appointment: " . $e->getMessage());
+                // Don't fail the user experience — still show success
+            }
+            
             $_SESSION['success_message'] = 'Form submitted successfully! We will contact you to confirm your booking.';
             return true;
         } else {
@@ -216,7 +180,7 @@ function processAppointmentForm() {
     return false;
 }
 
-// Display messages
+// Display success/error messages
 function displayMessages() {
     if (isset($_SESSION['success_message'])) {
         echo '<div class="success-message">' . htmlspecialchars($_SESSION['success_message']) . '</div>';
