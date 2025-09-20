@@ -24,7 +24,8 @@ $visitorStats->trackVisit($current_page);
         href="https://fonts.googleapis.com/css2?family=Lilita+One&family=PT+Sans+Narrow:wght@400;700&family=Raleway:wght@100&display=swap"
         rel="stylesheet"
     />
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
     <title><?php echo getPageTitle($current_page); ?></title>
 </head>
 <body>

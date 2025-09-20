@@ -52,7 +52,7 @@
                         <img src="pictures/icons/cross.svg" alt="" />
                     </a>
                     <div class="popup__title">Personal Account</div>
-                    <form method="POST" action="login.php">
+                    <form method="POST" action="includes/formhandler.inc.php">
                         <div class="popup__box-1">
                             <input 
                                 class="popup__form-1 full-form__input" 
@@ -79,9 +79,9 @@
                             </div>
                             <a class="foggot-password" href="forgot-password.php">Forgot password</a>
                         </div>
-                        <button class="popup-btn-enter" type="submit">Login</button>
+                        <button name="action" value="login" class="popup-btn-enter" type="submit">Login</button>
+                        <button name="action" value="register" class="popup-btn-registration" type="submit">Register</button>
                     </form>
-                    <a href="register.php" class="popup-btn-registration">Register</a>
                 </div>
             </div>
         </div>

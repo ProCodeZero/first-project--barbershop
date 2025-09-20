@@ -1,179 +1,210 @@
-// Minimal JavaScript for essential client-side functionality
-// Most functionality has been moved to PHP
-
-// Swiper initialization
-document.addEventListener('DOMContentLoaded', function() {
-    // Initialize Swiper for gallery
-    if (document.querySelector('.gallery__swiper')) {
-        new Swiper('.gallery__swiper', {
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-            },
-        });
-    }
-
-    // Phone number formatting
-    const phoneInputs = document.querySelectorAll('input[type="tel"]');
-    phoneInputs.forEach((input) => {
-        input.addEventListener('input', (e) => {
-            let value = e.target.value.replace(/\D/g, '');
-            if (value.length > 0) {
-                value = '+7 (' + value.substring(1, 4) + ') ' + 
-                        value.substring(4, 7) + '-' + 
-                        value.substring(7, 9) + '-' + 
-                        value.substring(9, 11);
-            }
-            e.target.value = value;
-        });
-    });
-
-    // Popup functionality
-    const popupLinks = document.querySelectorAll('.popup-link');
-    const popupClose = document.querySelectorAll('.close-popup');
-    const popup = document.getElementById('popup');
-
-    popupLinks.forEach(link => {
-        link.addEventListener('click', (e) => {
-            e.preventDefault();
-            popup.classList.add('open');
-        });
-    });
-
-    popupClose.forEach(close => {
-        close.addEventListener('click', (e) => {
-            e.preventDefault();
-            popup.classList.remove('open');
-        });
-    });
-
-    // Popover functionality
-    const popoverLinks = document.querySelectorAll('.popover-link');
-    const popoverClose = document.querySelectorAll('.close-popover');
-    const popover = document.getElementById('popover');
-
-    popoverLinks.forEach(link => {
-        link.addEventListener('click', (e) => {
-            e.preventDefault();
-            popover.classList.add('open');
-        });
-    });
-
-    popoverClose.forEach(close => {
-        close.addEventListener('click', (e) => {
-            e.preventDefault();
-            popover.classList.remove('open');
-        });
-    });
-
-    // Close popup/popover when clicking outside
-    document.addEventListener('click', (e) => {
-        if (popup && popup.classList.contains('open') && !e.target.closest('.popup__content')) {
-            popup.classList.remove('open');
-        }
-        if (popover && popover.classList.contains('open') && !e.target.closest('.basket__popover')) {
-            popover.classList.remove('open');
-        }
-    });
-
-    // Close on Escape key
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') {
-            if (popup) popup.classList.remove('open');
-            if (popover) popover.classList.remove('open');
-        }
-    });
-
-    // Price slider functionality
-    const rangeInputs = document.querySelectorAll('.range-input input');
-    const progress = document.querySelector('.price-setting__slider .progress');
-    const priceShows = document.querySelectorAll('.price-setting__watch .show-value');
-    
-    if (rangeInputs.length > 0 && progress && priceShows.length > 0) {
-        let priceGap = 200;
-        
-        rangeInputs.forEach((input) => {
-            input.addEventListener('input', (e) => {
-                let minVal = parseInt(rangeInputs[0].value);
-                let maxVal = parseInt(rangeInputs[1].value);
-                
-                if (maxVal - minVal < priceGap) {
-                    if (e.target.className === 'range-min') {
-                        rangeInputs[0].value = maxVal - priceGap;
-                    } else {
-                        rangeInputs[1].value = minVal + priceGap;
-                    }
-                } else {
-                    priceShows[0].textContent = minVal;
-                    priceShows[1].textContent = maxVal;
-                    progress.style.left = (minVal / rangeInputs[0].max) * 100 + '%';
-                    progress.style.right = 100 - (maxVal / rangeInputs[1].max) * 100 + '%';
-                }
-            });
-        });
-    }
-
-    // Auto-hide messages after 5 seconds
-    const messages = document.querySelectorAll('.success-message, .error-message');
-    messages.forEach(message => {
-        setTimeout(() => {
-            message.style.opacity = '0';
-            setTimeout(() => message.remove(), 300);
-        }, 5000);
-    });
+// Swiper
+new Swiper('.gallery__swiper', {
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
 });
 
-// Cart management functions
-function removeFromCart(productId) {
-    if (confirm('Удалить товар из корзины?')) {
-        const form = document.createElement('form');
-        form.method = 'POST';
-        form.innerHTML = '<input type="hidden" name="remove_from_cart" value="1"><input type="hidden" name="product_id" value="' + productId + '">';
-        document.body.appendChild(form);
-        form.submit();
-    }
+// Popover
+const popoverLinks = document.querySelectorAll('.popover-link');
+
+// Popup
+const popupLinks = document.querySelectorAll('.popup-link');
+const body = document.querySelector('body');
+// Для выравнивания фиксированных объектов
+const lockPadding = document.querySelectorAll('lock-padding');
+//
+let unlock = true;
+const timeout = 800;
+
+// Shop price slider
+const rangeInput = document.querySelectorAll('.range-input input'),
+  progress = document.querySelector('.price-setting__slider .progress');
+let priceGap = 200;
+
+// Popup list of goods
+const btnsClose = document.querySelectorAll('.basket-popover__delete-btn'),
+  goodsNumber = document.querySelectorAll('.basket__goods-number'),
+  priceShow = document.querySelectorAll('.price-setting__watch .show-value');
+let goodsList = document.querySelectorAll('.basket-popover__good-wrapper');
+
+if (goodsNumber.length > 0) {
+  for (let i = 0; i < goodsNumber.length; i++) {
+    const el = goodsNumber[i];
+    el.textContent = goodsList.length;
+  }
 }
 
-// Form validation
-function validateForm(form) {
-    const phoneInput = form.querySelector('input[type="tel"]');
-    const nameInput = form.querySelector('input[name="name"]');
-    
-    let isValid = true;
-    
-    if (phoneInput && !validatePhone(phoneInput.value)) {
-        showError(phoneInput, 'Введите корректный номер телефона');
-        isValid = false;
-    }
-    
-    if (nameInput && nameInput.value.length < 2) {
-        showError(nameInput, 'Имя должно содержать минимум 2 символа');
-        isValid = false;
-    }
-    
-    return isValid;
+// Delete good element
+if (btnsClose.length > 0) {
+  for (let i = 0; i < btnsClose.length; i++) {
+    const el = btnsClose[i];
+    el.addEventListener('click', function (e) {
+      e.target.closest('.basket-popover__good-wrapper').remove();
+      goodsList = document.querySelectorAll('.basket-popover__good-wrapper');
+      for (let i = 0; i < goodsNumber.length; i++) {
+        const el = goodsNumber[i];
+        console.log('el :>> ', el);
+        el.textContent = goodsList.length;
+      }
+    });
+  }
 }
 
-function validatePhone(phone) {
-    const phoneRegex = /^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$/;
-    return phoneRegex.test(phone);
+// Popover code
+if (popoverLinks.length > 0) {
+  for (let index = 0; index < popoverLinks.length; index++) {
+    const popoverLink = popoverLinks[index];
+    popoverLink.addEventListener('click', function (e) {
+      const popoverName = popoverLink.getAttribute('href').replace('#', '');
+      const curentPopover = document.getElementById(popoverName);
+      popoverOpen(curentPopover);
+      e.preventDefault();
+    });
+  }
+}
+const popoverCloseIcon = document.querySelectorAll('.close-popover');
+if (popoverCloseIcon.length > 0) {
+  for (let i = 0; i < popoverCloseIcon.length; i++) {
+    const el = popoverCloseIcon[i];
+    el.addEventListener('click', function (e) {
+      popoverClose(el.closest('.popover'));
+      e.preventDefault();
+    });
+  }
+}
+function popoverOpen(curentPopover) {
+  if (curentPopover && unlock) {
+    const popoverActive = document.querySelector('.popover.open');
+    if (popoverActive) {
+      popoverClose(popoverActive, false);
+    }
+    curentPopover.classList.add('open');
+    document.querySelector('main').addEventListener('click', function (e) {
+      if (!e.target.closest('.basket__popover')) {
+        popoverClose(document.querySelector('.popover'));
+      }
+    });
+  }
 }
 
-function showError(input, message) {
-    const errorDiv = document.createElement('div');
-    errorDiv.className = 'field-error';
-    errorDiv.textContent = message;
-    errorDiv.style.color = '#ff3434';
-    errorDiv.style.fontSize = '12px';
-    errorDiv.style.marginTop = '5px';
-    
-    input.parentNode.appendChild(errorDiv);
-    
+function popoverClose(popoverActive) {
+  if (unlock) {
+    popoverActive.classList.remove('open');
+  }
+}
+// End popover code
+
+// Popup code
+
+if (popupLinks.length > 0) {
+  for (let index = 0; index < popupLinks.length; index++) {
+    const popupLink = popupLinks[index];
+    popupLink.addEventListener('click', function (e) {
+      const popupName = popupLink.getAttribute('href').replace('#', '');
+      const curentPopup = document.getElementById(popupName);
+      popupOpen(curentPopup);
+      e.preventDefault();
+    });
+  }
+}
+const popupCloseIcon = document.querySelectorAll('.close-popup');
+if (popupCloseIcon.length > 0) {
+  for (let i = 0; i < popupCloseIcon.length; i++) {
+    const el = popupCloseIcon[i];
+    el.addEventListener('click', function (e) {
+      popupClose(el.closest('.popup'));
+      e.preventDefault();
+    });
+  }
+}
+function popupOpen(curentPopup) {
+  if (curentPopup && unlock) {
+    const popupActive = document.querySelector('.popup.open');
+    if (popupActive) {
+      popupClose(popupActive, false);
+    } else {
+      // Отключение скрола основной страницы + убирание ползунка
+      // bodyLock();
+    }
+    curentPopup.classList.add('open');
+    curentPopup.addEventListener('click', function (e) {
+      if (!e.target.closest('.popup__content')) {
+        popupClose(e.target.closest('.popup'));
+      }
+    });
+  }
+}
+
+function popupClose(popupActive, doUnlock = true) {
+  if (unlock) {
+    popupActive.classList.remove('open');
+    if (doUnlock) {
+      // Возвращение скрола основной страницы + убирание ползунка
+      // bodyUnlock();
+    }
+  }
+}
+// Отключение скрола основной страницы + убирание ползунка
+function bodyLock() {
+  const lockPaddingValue =
+    window.innerWidth - document.querySelector('.wrapper').offsetWidth + 'px';
+
+  if (lockPadding.length > 0) {
+    for (let i = 0; i < lockPadding.length; i++) {
+      const el = lockPadding[i];
+      el.style.paddingRight = lockPaddingValue;
+    }
+  }
+  body.style.paddingRight = lockPaddingValue;
+  body.classList.add('lock');
+
+  unlock = false;
+  setTimeout(() => {
+    unlock = true;
+  }, timeout);
+}
+// Возвращение скрола основной страницы + убирание ползунка
+function bodyUnlock() {
+  setTimeout(() => {
+    if (lockPadding.length > 0) {
+      for (let i = 0; i < lockPadding.length; i++) {
+        const el = lockPadding[i];
+        el.computedStyleMap.paddingRight = '0px';
+      }
+    }
+    body.style.paddingRight = '0px';
+    body.classList.remove('lock');
+  }, timeout);
+
+  unlock = false;
+  setTimeout(() => {
+    unlock = true;
+  }, timeout);
+}
+
+document.addEventListener('keydown', function (e) {
+  if (e.which === 27) {
+    const popupActive = this.document.querySelector('popup.open');
+    popupClose(popupActive);
+  }
+});
+// End popup code
+
+document.addEventListener('DOMContentLoaded', function () {
+  const alertBox = document.querySelector('.js-alert');
+  if (alertBox) {
+    alertBox.classList.add('show');
     setTimeout(() => {
-        errorDiv.remove();
-    }, 3000);
-}
+      alertBox.classList.remove('show');
+      setTimeout(() => {
+        alertBox.remove();
+      }, 300);
+    }, 3000); // 3 seconds
+  }
+});

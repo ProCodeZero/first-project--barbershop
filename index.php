@@ -8,6 +8,12 @@ include 'includes/header.php';
 ?>
 
 <main class="main">
+    <?php if (isset($_SESSION['message'])): ?>
+    <div class="alert alert--<?php echo $_SESSION['message']['type']; ?> js-alert">
+        <?php echo htmlspecialchars($_SESSION['message']['text']); ?>
+    </div>
+    <?php unset($_SESSION['message']); ?>
+    <?php endif; ?>
     <div class="main__background-container">
         <img
             src="pictures/backgroundjpg.jpg"
