@@ -93,14 +93,14 @@ include 'includes/header.php';
                             <h3 class="settings__subtitle">Manufacturers</h3>
                             <ul class="manufacturers-setting__list">
                                 <?php
-                                $manufacturers_list = [
+                                $manufacturers_list = array(
                                     'Bed Head for Men',
                                     'Homme Deep Cleansing Cool',
                                     'So Intense',
                                     'Sprekenhus',
                                     'Firm Store',
                                     'Winter Body'
-                                ];
+                                );
                                 foreach ($manufacturers_list as $manufacturer): ?>
                                 <li class="manufacturers-setting__item">
                                     <label class="check option">
