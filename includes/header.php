@@ -2,10 +2,24 @@
 // Common header include file
 $current_page = basename($_SERVER['PHP_SELF'], '.php');
 
-// Track visitor statistics
-require_once 'classes/VisitorStats.php';
-$visitorStats = new VisitorStats();
-$visitorStats->trackVisit($current_page);
+// Ensure PDO is available — initialize if not already done
+if (!isset($pdo)) {
+    require_once 'includes/dbh.inc.php'; // This should define $pdo
+    if (!isset($pdo) || !($pdo instanceof PDO)) {
+        error_log("Database connection failed or not initialized in header.php");
+        define('SKIP_VISITOR_TRACKING', true);
+    } else {
+        // Ensure proper charset
+        $pdo->exec("SET NAMES utf8mb4");
+    }
+}
+
+// Track visitor statistics only if DB is ready
+if (!defined('SKIP_VISITOR_TRACKING')) {
+    require_once 'classes/VisitorStats.php';
+    $visitorStats = new VisitorStats($pdo); // ✅ Now safe to pass $pdo
+    $visitorStats->trackVisit($current_page);
+}
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -80,7 +94,6 @@ $visitorStats->trackVisit($current_page);
                 </div>
             </div>
         </header>
-
 <?php
 function getPageTitle($page) {
     $titles = array(
@@ -121,14 +134,13 @@ function getPageMetaTags($page) {
             'author' => 'Borodinski Barbershop'
         )
     );
-    
+
     $currentMeta = isset($metaTags[$page]) ? $metaTags[$page] : $metaTags['index'];
-    
+
     $html = '';
-    $html .= '<meta name="description" content="' . htmlspecialchars($currentMeta['description']) . '" />' . "\n";
-    $html .= '<meta name="keywords" content="' . htmlspecialchars($currentMeta['keywords']) . '" />' . "\n";
-    $html .= '<meta name="author" content="' . htmlspecialchars($currentMeta['author']) . '" />' . "\n";
-    
+    $html .= '<meta name="description" content="' . htmlspecialchars($currentMeta['description'], ENT_QUOTES, 'UTF-8') . '" />' . "\n";
+    $html .= '<meta name="keywords" content="' . htmlspecialchars($currentMeta['keywords'], ENT_QUOTES, 'UTF-8') . '" />' . "\n";
+    $html .= '<meta name="author" content="' . htmlspecialchars($currentMeta['author'], ENT_QUOTES, 'UTF-8') . '" />' . "\n";
     return $html;
 }
 
@@ -143,16 +155,14 @@ function getCartItems() {
     if (session_id() == '') {
         session_start();
     }
-    
     if (!isset($_SESSION['cart']) || empty($_SESSION['cart'])) {
         return '<p>Cart is empty</p>';
     }
-    
     $html = '';
     foreach ($_SESSION['cart'] as $item) {
         $html .= '<div class="basket-popover__good-wrapper">';
         $html .= '<div class="basket-popover__good-info">';
-        $html .= '<h3>' . htmlspecialchars($item['name']) . '</h3>';
+        $html .= '<h3>' . htmlspecialchars($item['name'], ENT_QUOTES, 'UTF-8') . '</h3>';
         $html .= '<p>' . number_format($item['price']) . ' ₽</p>';
         $html .= '</div>';
         $html .= '<div class="basket-popover__delete-btn">';
@@ -162,7 +172,6 @@ function getCartItems() {
         $html .= '</div>';
         $html .= '</div>';
     }
-    
     return $html;
 }
 ?>
